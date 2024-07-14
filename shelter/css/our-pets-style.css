@@ -342,7 +342,7 @@ footer{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding-top: 16px;
     padding-bottom: 60px;
@@ -361,6 +361,7 @@ footer{
     align-items: left;
     justify-content: space-between;
     flex-direction: column;
+    margin-top: 16px;
 }
 .contact-title{
     font-family: Georgia;
@@ -431,6 +432,7 @@ footer{
     align-items: left;
     justify-content: space-between;
     flex-direction: column;
+    margin-top: 16px;
 }
 .address-title{
     font-family: Georgia;
