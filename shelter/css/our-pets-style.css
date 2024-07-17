@@ -31,7 +31,7 @@ header{
     top: 30px;
     left: 40px;
     right: 40px;
-    bottom: 0;
+    bottom: 30px;
     display: block;
     max-width: 1200px;
     max-height: 60px;
@@ -41,11 +41,17 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.header-logo{
+.header-logo-container{
     height: 60px;
+    width: 210px;
     position: absolute;
     top: 0%;
     left: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: column;
 }
 a.header-logo-title:link,a.header-logo-title:hover,
 a.header-logo-title:visited{
@@ -57,8 +63,21 @@ a.header-logo-title:visited{
     color: #545454;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    letter-spacing: 0.04em;
+    text-align: left;
+    height: 35px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+a.header-logo-title:hover{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 110%;
+    color: #545454;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
     letter-spacing: 0.04em;
     text-align: center;
     height: 35px;
@@ -72,20 +91,16 @@ a.header-logo-title:visited{
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
-    display: flex;
-    align-items: center;
     letter-spacing: 0.1em;
     color: #292929;
     height: 15px;
     text-align: left;
-    padding: none;
+    padding-left: 4px;
     margin: 0;
-    position: absolute;
-    bottom: 0;
-    right: 0;
 }
 .header-navigation{
     height: 27px;
+    width: 443px;
     position: absolute;
     right:0%;
     margin-top: auto;
@@ -119,7 +134,7 @@ a.header-logo-title:visited{
     flex-grow: 0;
 
 }
-a.header-item-link:hover,a.header-item-link:link,
+a.header-item-link:link,
 a.header-item-link:visited{
     height: 24px;
     font-family: Arial;
@@ -130,8 +145,28 @@ a.header-item-link:visited{
     color: #545454;
     text-decoration: none;
 }
-
-a.header-item-link-last:hover,a.header-item-link-last:link,
+a.header-item-link:hover{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #F1CDB3;
+    text-decoration: none;
+}
+a.header-item-link-line:link,
+a.header-item-link-line:visited,a.header-item-link-line:hover{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #545454;
+    text-decoration: none;
+}
+a.header-item-link-last:link,
 a.header-item-link-last:visited{
     height: 24px;
     font-family: Arial;
@@ -140,6 +175,16 @@ a.header-item-link-last:visited{
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
+    text-decoration: none;
+}
+a.header-item-link-last:hover{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #F1CDB3;
     text-decoration: none;
 }
 main{
@@ -161,7 +206,7 @@ main{
     padding-top: 80px;
     padding-bottom: 100px;
     position: absolute;
-    top: 80px;
+    top: 100px;
     left: 40px;
     right: 40px;
     bottom: 100px;
@@ -287,6 +332,22 @@ main{
     line-height: 115%;
     letter-spacing: 0.06em;
 }
+.button-next:hover{
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 5px solid #F1CDB3;
+    border-radius: 100px;
+    font-size:large;
+    font-weight: 1000;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
 .button-now{
     box-sizing: border-box;
     width: 52px;
@@ -298,6 +359,22 @@ main{
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+.button-now:hover{
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 5px solid #F1CDB3;
+    border-radius: 100px;
+    font-size:large;
+    font-weight: 1000;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 1000;
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
@@ -314,6 +391,22 @@ main{
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+.button-last:hover{
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 5px solid #F1CDB3;
+    border-radius: 100px;
+    font-size:large;
+    font-weight: 1000;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 1000;
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
@@ -425,7 +518,7 @@ footer{
     margin-bottom: 0;
 }
 .footer-address-container{
-    width: 302px;
+    width: 310px;
     height: 234px;
     display: flex;
     flex-wrap: wrap;
