@@ -778,7 +778,7 @@ footer{
 .mail-icon{
     height: 32px;
 }
-.mail{
+a.mail:active,a.mail:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -790,6 +790,21 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
+}
+a.mail:active,a.mail:hover{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #FDDCC4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 .contact-phone{
     width: 239px;
@@ -802,7 +817,7 @@ footer{
 .phone-icon{
     height: 32px;
 }
-.phone{
+a.phone{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -814,6 +829,21 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none ;
+}
+a.phone:hover{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FDDCC4;
 }
 .footer-address-container{
     width: 310px;
@@ -849,7 +879,7 @@ footer{
 .address-icon{
     height: 32px;
 }
-.address{
+a.address{
     width: 260px;
     height: 46px;
     font-family: Georgia;
@@ -863,6 +893,23 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
+}
+a.address:hover{
+    width: 260px;
+    height: 46px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #FDDCC4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 .address-2{
     width: 302px;
@@ -872,7 +919,7 @@ footer{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.address-london{
+a.address-london{
     width: 260px;
     height: 23px;
     font-family: Georgia;
@@ -886,6 +933,23 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
+}
+a.address-london:hover{
+    width: 260px;
+    height: 23px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #FDDCC4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 
 
