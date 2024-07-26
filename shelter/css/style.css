@@ -167,7 +167,7 @@ a.header-item-link:hover{
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
-    color: #F1CDB3;
+    color: #FAFAFA;
     text-decoration: none;
 }
 a.header-item-link-about:hover,a.header-item-link-about:link,
@@ -179,6 +179,7 @@ a.header-item-link-about:visited{
     line-height: 160%;
     color: #FAFAFA;
     text-decoration: none;
+    cursor: default;
 }
 .not-only{
     height: 728px;
@@ -235,9 +236,8 @@ a.header-item-link-about:visited{
 }
 
 .make-our-friends:hover{
-    background: #F1CDB3;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    background: #FDDCC4;
+    border-radius: 100px;
     width: 207px;
     height: 52px;
     font-family: Georgia;
@@ -247,10 +247,9 @@ a.header-item-link-about:visited{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: button;
+    cursor: pointer;
 }
+
 main{
     display: block;
     min-width: 1280px;
@@ -379,8 +378,11 @@ main{
     letter-spacing: 0.06em;
     color: #292929;
 }
+
+
 .pets-primary-button:hover{
-    background: #F1CDB3;
+    background:#FDDCC4;
+    cursor: pointer;
     width: 261px;
     height: 52px;
     border: none;
@@ -391,22 +393,6 @@ main{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: button;
-}
-@keyframes button {
-    from{
-        background: #F1CDB3;
-    }
-    50%{
-        background: #ecb286;
-    }
-    to{
-        background: #efa262;
-    }
 }
 
 .button-arrow{
@@ -423,12 +409,15 @@ main{
     box-sizing: border-box;
     width: 52px;
     height: 52px;
-    border: 5px solid #F1CDB3;
+    border: 2px solid #FDDCC4;
     border-radius: 100px;
-    font-size:large;
+    font-size:medium;
     font-weight: 1000;
     color: #292929;
+    background: #FDDCC4;
+    cursor: pointer;
 }
+
 .pets-card-container{
     height: 435px;
     width: 270px;
@@ -448,11 +437,9 @@ main{
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    background: #FAFAFA;
+    background: #FFFFFF;
     border-radius: 9px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: slidein;
+    cursor: pointer;
 }
 .pets-card-container-mind{
     height: 435px;
@@ -477,23 +464,11 @@ main{
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    background: #FAFAFA;
+    background: #FFFFFF;
     border-radius: 9px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: slidein;
+    cursor: pointer;
 }
-@keyframes slidein {
-    from{
-        background: #FAFAFA;
-    }
-    50%{
-        background: #CDCDCD;
-    }
-    to{
-        background: #F1CDB3;
-    }
-}
+
 .img-pets{
     width: 270px;
     height: 270px;
@@ -522,6 +497,23 @@ main{
     color: #292929;
     margin-bottom: 30px;
     background: #FAFAFA;
+}
+
+.button-pets-learn-more:hover{
+    width: 187px;
+    height: 52px;
+    border: 2px solid #FDDCC4;
+    border-radius: 100px;
+    font-family:Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    margin-bottom: 30px;
+    background: #FDDCC4;
+    cursor: pointer;
 }
 #help{
     height: 611px;
@@ -690,11 +682,9 @@ main{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px 15px;
-    background: #F1CDB3;
+    background: #FDDCC4;
+    cursor: pointer;
     border-radius: 9px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: slidein;
 }
 .credit-icon{
     width: 30px;
