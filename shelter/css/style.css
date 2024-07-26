@@ -55,13 +55,20 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.header-logo{
+.header-logo-container{
     height: 60px;
+    width: 210px;
     position: absolute;
     top: 0%;
     left: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: column;
+
 }
-a.header-logo-title:link,a.header-logo-title:hover,
+a.header-logo-title:link,
 a.header-logo-title:visited{
     font-family: Georgia;
     font-style: normal;
@@ -71,8 +78,21 @@ a.header-logo-title:visited{
     color: #F1CDB3;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    letter-spacing: 0.04em;
+    text-align: left;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    height: 35px;
+}
+a.header-logo-title:hover{
+    font-family: Georgia;
+    font-style:normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 110%;
+    color: #F1CDB3;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
     letter-spacing: 0.04em;
     text-align: left;
     -webkit-text-stroke-color: black;
@@ -86,21 +106,17 @@ a.header-logo-title:visited{
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
-    display: flex;
-    align-items: center;
     letter-spacing: 0.1em;
     color: #FFFFFF;
     height: 15px;
     text-align: left;
-    padding: none;
+    padding-left: 4px;
     margin: 0;
-    position: absolute;
-    bottom: 0;
-    right: 0;
 
 }
 .header-navigation{
     height: 27px;
+    width: 443px;
     position: absolute;
     right:0%;
     margin-top: auto;
@@ -133,7 +149,7 @@ a.header-logo-title:visited{
     align-self: stretch;
     flex-grow: 0;
 }
-a.header-item-link:hover,a.header-item-link:link,
+a.header-item-link:link,
 a.header-item-link:visited{
     height: 24px;
     font-family: Arial;
@@ -142,6 +158,16 @@ a.header-item-link:visited{
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
+    text-decoration: none;
+}
+a.header-item-link:hover{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #FAFAFA;
     text-decoration: none;
 }
 a.header-item-link-about:hover,a.header-item-link-about:link,
@@ -153,6 +179,7 @@ a.header-item-link-about:visited{
     line-height: 160%;
     color: #FAFAFA;
     text-decoration: none;
+    cursor: default;
 }
 .not-only{
     height: 728px;
@@ -193,15 +220,12 @@ a.header-item-link-about:visited{
     color: #CDCDCD;
     margin-bottom: 42px;
 }
-.header-friend-button{
+.make-our-friends{
     background: #F1CDB3;
     border-radius: 100px;
     width: 207px;
     height: 52px;
     border: none;
-}
-a.make-our-friends:hover,a.make-our-friends:visited,
-a.make-our-friends:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -209,50 +233,52 @@ a.make-our-friends:link{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
-    text-decoration: none;
 }
+
+.make-our-friends:hover{
+    background: #FDDCC4;
+    border-radius: 100px;
+    width: 207px;
+    height: 52px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    cursor: pointer;
+}
+
 main{
     display: block;
     min-width: 1280px;
-    min-height: 2538px;
+    min-height: 2539px;
     margin: none;
     padding: none;
     position: relative;
 }
-.main-container{
-    position: absolute;
-    left: 3.1%;
-    right: 3.1%;
-    bottom: 0;
-    top:0;
-    display: block;
-    max-width: 1280px;
-    max-height: 2538px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-}
 #about{
     height: 588px;
-    width: 1280px;
     display: block;
-    max-width: 1280px;
-    max-height: 588px;
+    min-width: 1280px;
+    min-height: 588px;
+    margin: none;
     padding-top: 80px;
     padding-bottom: 100px;
 }
+
 .about-container{
     height: 408px;
+    width: 1200px;
+    padding-left:175px;
+    padding-right:175px;
     display: flex;
     flex-wrap: wrap;
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
-    padding-left:215px ;
-    padding-right:215px ;
+    margin: auto;
 }
 .about-pets-img{
     height: 408px;
@@ -292,12 +318,12 @@ main{
 }
 #our-friends{
     height: 877px;
-    width: 1280px;
     display: block;
-    max-width: 1280px;
-    max-height: 877px;
+    min-width: 1280px;
+    min-height: 878px;
     padding-top: 80px;
     padding-bottom: 100px;
+    margin: none;
     background: #F6F6F6;
     
 }
@@ -312,6 +338,7 @@ main{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    margin: auto;
 }
 .pets-content{
     width: 400px;
@@ -336,15 +363,13 @@ main{
     justify-content:space-between;
     flex-direction:row 
 }
+
 .pets-primary-button{
     background: #F1CDB3;
     border-radius: 100px;
     width: 261px;
     height: 52px;
     border: none;
-}
-a.primary-link:hover,a.primary-link:visited,
-a.primary-link:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -352,8 +377,24 @@ a.primary-link:link{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
-    text-decoration: none;
 }
+
+
+.pets-primary-button:hover{
+    background:#FDDCC4;
+    cursor: pointer;
+    width: 261px;
+    height: 52px;
+    border: none;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+
 .button-arrow{
     box-sizing: border-box;
     width: 52px;
@@ -364,9 +405,22 @@ a.primary-link:link{
     font-weight: 1000;
     color: #292929;
 }
+.button-arrow:hover{
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #FDDCC4;
+    border-radius: 100px;
+    font-size:medium;
+    font-weight: 1000;
+    color: #292929;
+    background: #FDDCC4;
+    cursor: pointer;
+}
+
 .pets-card-container{
     height: 435px;
-    width: 270;
+    width: 270px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -377,7 +431,21 @@ a.primary-link:link{
 }
 .pets-card-container:hover{
     height: 435px;
-    width: 270;
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.pets-card-container-mind{
+    height: 435px;
+    width: 270px;
+    margin-left:35px;
+    margin-right: 35px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -385,21 +453,22 @@ a.primary-link:link{
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: slidein;
 }
-@keyframes slidein {
-    from{
-        background: #FAFAFA;
-    }
-    50%{
-        background: #CDCDCD;
-    }
-    to{
-        background: #F1CDB3;
-    }
+.pets-card-container-mind:hover{
+    height: 435px;
+    width: 270px;
+    margin-left:35px;
+    margin-right: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 9px;
+    cursor: pointer;
 }
+
 .img-pets{
     width: 270px;
     height: 270px;
@@ -429,26 +498,47 @@ a.primary-link:link{
     margin-bottom: 30px;
     background: #FAFAFA;
 }
+
+.button-pets-learn-more:hover{
+    width: 187px;
+    height: 52px;
+    border: 2px solid #FDDCC4;
+    border-radius: 100px;
+    font-family:Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    margin-bottom: 30px;
+    background: #FDDCC4;
+    cursor: pointer;
+}
 #help{
     height: 611px;
-    width: 1280px;
     display: block;
-    max-width: 1280px;
-    max-height: 611px;
-    padding-top: 65px;
-    padding-bottom: 150px;
+    min-width: 1280px;
+    min-height: 611px;
+    margin: none;
+    padding-top: 80px;
+    padding-bottom: 100px;
 }
 .help-container{
     height: 431px;
+    width: 1200px;
     display: flex;
     flex-wrap: wrap;
     flex-direction:column;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
 }
 .help-heading{
-    width:308px ;
+    width:310px ;
     height:90px ;
+    margin: 0;
+    padding: 0;
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -457,14 +547,12 @@ a.primary-link:link{
     letter-spacing: 0.06em;
     text-align: center;
     color: #545454;
-    margin: 0;
-    padding: 0;
 }
 .help-list{
-    width: 1026px;
-    height: 281px;
+    width: 1030px;
+    height: 340px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     flex-wrap: wrap;
     justify-content: start;
     margin: 0%;
@@ -486,24 +574,31 @@ a.primary-link:link{
 }
 .help-item:first-child{
     margin-left: 0;
+    margin-right: 5px;
 }
 .help-item-vitamins{
-    margin-left: 100px;
+    margin-left: 88px;
 }
 .help-list-icon{
     width: 60px;
     height: 60px;
 }
+.help-item p, .help-item-vitamins p{
+    margin-top: 25px;
+}
+.help-item:last-child{
+    margin-left: 122px;
+}
 #in-addition{
     height: 462px;
-    width: 1280px;
     display: block;
-    max-width: 1280px;
-    max-height: 462px;
+    min-width: 1280px;
+    min-height: 462px;
     padding-right: 182.5px;
     padding-left: 182.5px;
     padding-top: 80px;
     padding-bottom: 100px;
+    margin: none;
     background: #F6F6F6
 }
 .donation-container{
@@ -514,6 +609,7 @@ a.primary-link:link{
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
 }
 .donation-img{
     height: 261px;
@@ -576,6 +672,18 @@ a.primary-link:link{
     justify-content: space-between;
     padding: 10px 15px;
     background: #F1CDB3;
+    border-radius: 9px;
+}
+.donation-credit-card:hover{
+    width: 349px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #FDDCC4;
+    cursor: pointer;
     border-radius: 9px;
 }
 .credit-icon{
@@ -670,7 +778,7 @@ footer{
 .mail-icon{
     height: 32px;
 }
-.mail{
+a.mail:active,a.mail:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -682,6 +790,21 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
+}
+a.mail:active,a.mail:hover{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #FDDCC4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 .contact-phone{
     width: 239px;
@@ -694,7 +817,7 @@ footer{
 .phone-icon{
     height: 32px;
 }
-.phone{
+a.phone{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -706,9 +829,24 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none ;
+}
+a.phone:hover{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FDDCC4;
 }
 .footer-address-container{
-    width: 302px;
+    width: 310px;
     height: 234px;
     display: flex;
     flex-wrap: wrap;
@@ -741,7 +879,7 @@ footer{
 .address-icon{
     height: 32px;
 }
-.address{
+a.address{
     width: 260px;
     height: 46px;
     font-family: Georgia;
@@ -755,6 +893,23 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
+}
+a.address:hover{
+    width: 260px;
+    height: 46px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #FDDCC4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 .address-2{
     width: 302px;
@@ -764,7 +919,7 @@ footer{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.address-london{
+a.address-london{
     width: 260px;
     height: 23px;
     font-family: Georgia;
@@ -778,6 +933,23 @@ footer{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
+}
+a.address-london:hover{
+    width: 260px;
+    height: 23px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #FDDCC4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 
 
