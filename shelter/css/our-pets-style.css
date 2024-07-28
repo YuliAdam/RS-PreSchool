@@ -1,5 +1,6 @@
 html{
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *,*::before,*::after{
     box-sizing: inherit;
@@ -83,6 +84,18 @@ a.header-logo-title:hover{
     height: 35px;
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: 1px;
+    animation-name: logo;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes logo {
+    from {
+        font-size: 33px;
+    }
+  
+    to {
+        font-size: 36px;
+    }
 }
 
 .header-logo-subtitle{
@@ -154,6 +167,18 @@ a.header-item-link:hover{
     line-height: 160%;
     color: #292929;
     text-decoration: none;
+    animation-name: nav;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes nav {
+    from {
+        color: #545454;
+    }
+  
+    to {
+        color: #292929;
+    }
 }
 a.header-item-link-line:link,
 a.header-item-link-line:visited,a.header-item-link-line:hover{
@@ -187,6 +212,18 @@ a.header-item-link-last:hover{
     line-height: 160%;
     color: #292929;
     text-decoration: none;
+    animation-name: nav-last;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; 
+}
+@keyframes nav-last {
+    from {
+        color: #CDCDCD;
+    }
+  
+    to {
+        color: #292929;
+    }
 }
 main{
     height: 1342px;
@@ -266,6 +303,18 @@ main{
     background: #FFFFFF;
     border-radius: 9px;
     cursor: pointer;
+    animation-name: slidein;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes slidein {
+    from {
+        background: #FAFAFA;
+    }
+  
+    to {
+        background: #FFFFFF;
+    }
 }
 .img-pets{
     width: 270px;
@@ -299,7 +348,7 @@ main{
 .button-pets-learn-more:hover{
     width: 187px;
     height: 52px;
-    border: 2px solid #F1CDB3;
+    border: 2px solid #FDDCC4;
     border-radius: 100px;
     font-family:Georgia;
     font-style: normal;
@@ -311,6 +360,20 @@ main{
     margin-bottom: 30px;
     background: #FDDCC4;
     cursor: pointer;
+    animation-name: burron-pets-learn-more;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes burron-pets-learn-more {
+    from {
+        border: 2px solid #F1CDB3;
+        background: #FAFAFA;
+    }
+  
+    to {
+        border: 2px solid #FDDCC4;
+        background: #FDDCC4;
+    }
 }
 .main-nav-container{
     display: flex;
@@ -340,7 +403,7 @@ main{
     box-sizing: border-box;
     width: 52px;
     height: 52px;
-    border: 2px solid #F1CDB3;
+    border: 2px solid #FDDCC4;
     border-radius: 100px;
     font-size:medium;
     font-weight: 1000;
@@ -353,6 +416,20 @@ main{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
+    animation-name: arrow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes arrow {
+    from {
+        border: 2px solid #F1CDB3;
+        background: none;
+    }
+  
+    to {
+        border: 2px solid #FDDCC4;
+        background: #FDDCC4;
+    }
 }
 .button-now{
     box-sizing: border-box;
@@ -384,6 +461,7 @@ main{
     line-height: 115%;
     letter-spacing: 0.06em;
     cursor: default;
+    background: #F1CDB3;
 }
 .button-last{
     box-sizing: border-box;
@@ -470,6 +548,25 @@ footer{
 .mail-icon{
     height: 32px;
 }
+.mail-icon:hover{
+    height: 32px;
+    transform: scale(1.2);
+    z-index: 2;
+    animation-name: footer-icon;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes footer_icon {
+    from {
+        transform: scale(1);
+        z-index: 1;
+    }
+
+    to {
+        transform: scale(1.2);
+        z-index: 2;
+    }
+}
 a.mail{
     font-family: Georgia;
     font-style: normal;
@@ -497,6 +594,9 @@ a.mail:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    animation-name: footer;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 .contact-phone{
     width: 239px;
@@ -508,6 +608,14 @@ a.mail:hover{
 }
 .phone-icon{
     height: 32px;
+}
+.phone-icon:hover{
+    height: 32px;
+    transform: scale(1.2);
+    z-index: 2;
+    animation-name: footer-icon;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 a.phone{
     font-family: Georgia;
@@ -536,6 +644,9 @@ a.phone:hover{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    animation-name: footer;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 .footer-address-container{
     width: 310px;
@@ -571,6 +682,14 @@ a.phone:hover{
 .address-icon{
     height: 32px;
 }
+.address-icon:hover{
+    height: 32px;
+    transform: scale(1.2);
+    z-index: 2;
+    animation-name: footer-icon;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
 a.address{
     width: 260px;
     height: 46px;
@@ -602,6 +721,9 @@ a.address:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    animation-name: footer;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 .address-2{
     width: 302px;
@@ -642,4 +764,16 @@ a.address-london:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    animation-name: footer;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes footer {
+    from {
+        color: #F1CDB3;
+    }
+  
+    to {
+        color: #FDDCC4;
+    }
 }
