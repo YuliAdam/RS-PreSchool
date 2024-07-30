@@ -67,6 +67,7 @@ a.header-logo-title:visited{
     letter-spacing: 0.04em;
     text-align: left;
     height: 35px;
+    transition: all 0.5s ease-in;
 }
 a.header-logo-title:hover{
     font-family: Georgia;
@@ -152,6 +153,7 @@ a.header-item-link:visited{
     line-height: 160%;
     color: #545454;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.header-item-link:hover{
     height: 24px;
@@ -197,6 +199,7 @@ a.header-item-link-last:visited{
     line-height: 160%;
     color:  #545454;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.header-item-link-last:hover{
     height: 24px;
@@ -286,6 +289,7 @@ main{
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
+    transition: all 0.5s ease-in;
 }
 .pets-card-container:hover{
     height: 435px;
@@ -339,6 +343,7 @@ main{
     color: #292929;
     margin-bottom: 30px;
     background: #FAFAFA;
+    transition: all 0.5s ease-in;
 }
 .button-pets-learn-more:hover{
     width: 187px;
@@ -393,6 +398,7 @@ main{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
+    transition: all 0.5s ease-in;
 }
 .button-next:hover{
     box-sizing: border-box;
@@ -540,6 +546,7 @@ footer{
 }
 .mail-icon{
     height: 32px;
+    transition: all 0.5s ease-in;
 }
 .mail-icon:hover{
     height: 32px;
@@ -573,6 +580,7 @@ a.mail{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.mail:hover{
     text-decoration: none;
@@ -601,6 +609,7 @@ a.mail:hover{
 }
 .phone-icon{
     height: 32px;
+    transition: all 0.5s ease-in;
 }
 .phone-icon:hover{
     height: 32px;
@@ -623,6 +632,7 @@ a.phone{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.phone:hover{
     font-family: Georgia;
@@ -674,6 +684,7 @@ a.phone:hover{
 }
 .address-icon{
     height: 32px;
+    transition: all 0.5s ease-in;
 }
 .address-icon:hover{
     height: 32px;
@@ -698,6 +709,7 @@ a.address{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.address:hover{
     text-decoration: none;
@@ -741,6 +753,7 @@ a.address-london{
     margin-top: 0;
     text-decoration: none;
     margin-bottom: 0;
+    transition: all 0.5s ease-in;
 }
 a.address-london:hover{
     text-decoration: none;

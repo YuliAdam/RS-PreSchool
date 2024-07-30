@@ -82,6 +82,7 @@ a.header-logo-title:visited{
     letter-spacing: 0.04em;
     text-align: left;
     height: 35px;
+    transition: all 0.5s ease-in;
 }
 a.header-logo-title:hover{
     font-family: Georgia;
@@ -168,6 +169,7 @@ a.header-item-link:visited{
     line-height: 160%;
     color: #CDCDCD;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.header-item-link:hover{
     height: 24px;
@@ -254,6 +256,7 @@ a.header-item-link-about:visited{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
+    transition: all 0.5s ease-in;
 }
 
 .make-our-friends:hover{
@@ -410,6 +413,7 @@ main{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
+    transition: all 0.5s ease-in;
 }
 
 
@@ -449,6 +453,7 @@ main{
     font-size:medium;
     font-weight: 1000;
     color: #292929;
+    transition: all 0.5s ease-in;
 }
 .button-arrow:hover{
     box-sizing: border-box;
@@ -487,6 +492,7 @@ main{
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
+    transition: all 0.5s ease-in;
 }
 .pets-card-container:hover{
     height: 435px;
@@ -523,6 +529,7 @@ main{
     justify-content:space-between;
     align-items: center;
     background: #FAFAFA;
+    transition: all 0.5s ease-in;
     border-radius: 9px;
 }
 .pets-card-container-mind:hover{
@@ -571,6 +578,7 @@ main{
     color: #292929;
     margin-bottom: 30px;
     background: #FAFAFA;
+    transition: all 0.5s ease-in;
 }
 
 .button-pets-learn-more:hover{
@@ -761,6 +769,7 @@ main{
     padding: 10px 15px;
     background: #F1CDB3;
     border-radius: 9px;
+    transition: all 0.5s ease-in;
 }
 .donation-credit-card:hover{
     width: 349px;
@@ -875,6 +884,7 @@ footer{
 }
 .mail-icon{
     height: 32px;
+    transition: all 0.5s ease-in;
 }
 .mail-icon:hover{
     height: 32px;
@@ -908,6 +918,7 @@ a.mail:active,a.mail:link{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.mail:active,a.mail:hover{
     font-family: Georgia;
@@ -936,6 +947,7 @@ a.mail:active,a.mail:hover{
 }
 .phone-icon{
     height: 32px;
+    transition: all 0.5s ease-in;
 }
 .phone-icon:hover{
     height: 32px;
@@ -958,6 +970,7 @@ a.phone{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none ;
+    transition: all 0.5s ease-in;
 }
 a.phone:hover{
     font-family: Georgia;
@@ -1009,6 +1022,7 @@ a.phone:hover{
 }
 .address-icon{
     height: 32px;
+    transition: all 0.5s ease-in;
 }
 .address-icon:hover{
     height: 32px;
@@ -1033,6 +1047,7 @@ a.address{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.address:hover{
     width: 260px;
@@ -1076,6 +1091,7 @@ a.address-london{
     margin-top: 0;
     margin-bottom: 0;
     text-decoration: none;
+    transition: all 0.5s ease-in;
 }
 a.address-london:hover{
     width: 260px;
