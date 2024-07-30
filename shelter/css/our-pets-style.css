@@ -315,6 +315,34 @@ main{
         background: #FFFFFF;
     }
 }
+.pets-card-container:hover .button-pets-learn-more{
+    width: 187px;
+    height: 52px;
+    border: 2px solid #FDDCC4;
+    border-radius: 100px;
+    font-family:Georgia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    margin-bottom: 30px;
+    background: #FDDCC4;
+    cursor: pointer;
+    animation-name: burron-pets-learn-more;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes slidein {
+    from {
+        background: #FAFAFA;
+    }
+  
+    to {
+        background: #FFFFFF;
+    }
+}
 .img-pets{
     width: 270px;
     height: 270px;
