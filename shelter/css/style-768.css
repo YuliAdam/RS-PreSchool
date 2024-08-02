@@ -129,7 +129,7 @@ a.header-logo-title:hover{
 
 .header-navigation{
     height: 27px;
-    
+    width: 65%;
     max-width: 441.66px;
     position: absolute;
     right:0%;
@@ -869,15 +869,15 @@ footer{
 }
 .footer-container-768{
     width: 83.3%;
-    height: 615px;
+    height: 608px;
     position: absolute;
-    top: 23px;
-    left: 3.3%;
-    right: 3.3%;
+    top: 30px;
+    left: 8%;
+    right: 3.9%;
     bottom: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items:center;
+    align-items:flex-end;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -1172,8 +1172,7 @@ display: none;
     margin: auto;
     position: absolute;
     bottom: 0;
-    left:33%
-    
+    left:27%
     }
 
 
