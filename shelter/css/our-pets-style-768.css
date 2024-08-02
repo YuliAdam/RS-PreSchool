@@ -14,7 +14,7 @@ body{
     color:black;
     position: relative;
     display: block;
-    min-width: 1280px;
+    min-width: 768px;
     margin: 0;
     padding: 0;
 }
@@ -22,7 +22,7 @@ body{
 header{
     height: 120px;
     display: block;
-    min-width: 1280px;
+    min-width: 768px;
     min-height: 120px;
     padding: none;
     margin: none;
@@ -31,11 +31,11 @@ header{
 .header-container{
     position: absolute;
     top: 30px;
-    left: 40px;
-    right: 40px;
+    left: 3.9%;
+    right: 3.9%;
     bottom: 30px;
     display: block;
-    max-width: 1200px;
+    max-width: 708px;
     max-height: 60px;
     margin: auto;
     display: flex;
@@ -70,6 +70,7 @@ a.header-logo-title:visited{
     height: 35px;
     transition: all 0.5s ease-in;
 }
+
 a.header-logo-title:hover{
     font-family: Georgia;
     font-style: normal;
@@ -225,32 +226,28 @@ a.header-item-link-last:hover{
     }
 }
 main{
-    height: 1342px;
+    height: 1733px;
     background: #F6F6F6;
     display: block;
-    min-width: 1280px;
-    min-height: 1342px;
+    min-width: 768px;
+    min-height: 1733px;
     margin: none;
     padding: none;
     position: relative;
 }
 .main-pets{
-    height: 1342px;
-    width: 1280px;
+    
+    width: 92.2%;
     display: block;
-    max-width: 1280px;
-    max-height: 1342px;
-    padding-top: 80px;
-    padding-bottom: 100px;
+    max-width: 708px;
+    max-height: 1603px;
     position: absolute;
-    top: 100px;
-    left: 0px;
-    right: 40px;
-    bottom: 100px;
+    top: 4.6%;
+    left: 3.9%;
     margin: auto;
 }
 .pets-container{
-    height: 1162px;
+    height: 1603;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -272,19 +269,24 @@ main{
     text-align: center;
 }
 .pets-slider-container{
-    height: 930px;
-    width: 1200px;
+    height: 1424px;
+    width: 81.9%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content:space-between;
-    flex-direction:row 
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction:row;
+    padding-top: 32px;
+    margin-bottom: 11px;
+    
 }
-.pets-card-container,
-.pets-card-container-Scarlet
-{
+.pets-card-container-Scarlet,
+.pets-card-container:last-child{
+    display: none;
+}
+.pets-card-container{
     height: 435px;
-    width: 270;
+    width: 270px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -294,8 +296,7 @@ main{
     border-radius: 9px;
     transition: all 0.5s ease-in;
 }
-.pets-card-container:hover,
-.pets-card-container-Scarlet:hover{
+.pets-card-container:hover{
     height: 435px;
     width: 270;
     display: flex;
@@ -319,8 +320,7 @@ main{
         background: #FFFFFF;
     }
 }
-.pets-card-container:hover .button-pets-learn-more,
-.pets-card-container-Scarlet:hover .button-pets-learn-more{
+.pets-card-container:hover .button-pets-learn-more{
     width: 187px;
     height: 52px;
     border: 2px solid #FDDCC4;
@@ -415,6 +415,7 @@ main{
     justify-content: space-between;
     width: 340px;
     height: 52px;
+    margin-bottom: ;
 }
 .button-next{
     box-sizing: border-box;
@@ -517,36 +518,39 @@ footer{
     background: url(../img/footer-background.png);
     background: url(../img/footer-gradient-background.png),  radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
     background-size: cover;
-    height: 350px;
+    height: 639px;
     display: block;
-    min-width: 1280px;
-    min-height: 350px;
+    min-width: 768px;
     padding: none;
     margin: none;
     position: relative;
 }
-.footer-container{
+.footer-container-768{
+    width: 83.3%;
+    height: 608px;
     position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
+    top: 30px;
+    left: 8%;
+    right: 3.9%;
     bottom: 0;
-    display: block;
-    max-width: 1200px;
-    max-height: 310px;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items:flex-end;
+    flex-direction: column;
     justify-content: space-between;
-    padding-top: 16px;
-    padding-bottom: 60px;
 }
-.footer-container:last-child{
-    padding-bottom: 0;
-    padding-top: 0;
+.footer-container{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    flex-direction: row;
+    justify-content: space-between;
 }
-#footer-contact-container{
+#contact{
     width: 287px;
     height: 234px;
     display: flex;
@@ -554,7 +558,7 @@ footer{
     align-items: left;
     justify-content: space-between;
     flex-direction: column;
-    margin-top: 16px;
+    margin:0;
 }
 .contact-title{
     font-family: Georgia;
@@ -600,7 +604,7 @@ footer{
         z-index: 2;
     }
 }
-a.mail{
+a.mail:active,a.mail:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -615,8 +619,7 @@ a.mail{
     text-decoration: none;
     transition: all 0.5s ease-in;
 }
-a.mail:hover{
-    text-decoration: none;
+a.mail:active,a.mail:hover{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -628,6 +631,7 @@ a.mail:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -664,7 +668,7 @@ a.phone{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    text-decoration: none;
+    text-decoration: none ;
     transition: all 0.5s ease-in;
 }
 a.phone:hover{
@@ -674,25 +678,25 @@ a.phone:hover{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
-    color: #FDDCC4;
+    text-decoration: none;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    text-decoration: none;
+    color: #FDDCC4;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
 }
 .footer-address-container{
-    width: 310px;
+    width: 300px;
     height: 234px;
     display: flex;
     flex-wrap: wrap;
     align-items: left;
     justify-content: space-between;
     flex-direction: column;
-    margin-top: 16px;
+    margin: 0;
 }
 .address-title{
     font-family: Georgia;
@@ -745,7 +749,6 @@ a.address{
     transition: all 0.5s ease-in;
 }
 a.address:hover{
-    text-decoration: none;
     width: 260px;
     height: 46px;
     font-family: Georgia;
@@ -759,6 +762,7 @@ a.address:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -784,12 +788,11 @@ a.address-london{
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
-    text-decoration: none;
     margin-bottom: 0;
+    text-decoration: none;
     transition: all 0.5s ease-in;
 }
 a.address-london:hover{
-    text-decoration: none;
     width: 260px;
     height: 23px;
     font-family: Georgia;
@@ -803,6 +806,7 @@ a.address-london:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -816,3 +820,15 @@ a.address-london:hover{
         color: #FDDCC4;
     }
 }
+.footer-puppy{
+display: none;
+}
+.footer-puppy-768{
+    width: 300px;
+    height: auto;
+    display:block;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left:27%
+    }
