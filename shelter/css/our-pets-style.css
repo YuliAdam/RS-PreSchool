@@ -525,9 +525,10 @@ footer{
     margin: none;
     position: relative;
 }
+
 .footer-container{
     position: absolute;
-    top: 40px;
+    top: 6px;
     left: 40px;
     right: 40px;
     bottom: 0;
@@ -537,7 +538,7 @@ footer{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items:flex-start;
     justify-content: space-between;
     padding-top: 16px;
     padding-bottom: 60px;
@@ -546,7 +547,7 @@ footer{
     padding-bottom: 0;
     padding-top: 0;
 }
-#footer-contact-container{
+#contact{
     width: 287px;
     height: 234px;
     display: flex;
@@ -600,7 +601,7 @@ footer{
         z-index: 2;
     }
 }
-a.mail{
+a.mail:active,a.mail:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -615,8 +616,7 @@ a.mail{
     text-decoration: none;
     transition: all 0.5s ease-in;
 }
-a.mail:hover{
-    text-decoration: none;
+a.mail:active,a.mail:hover{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -628,6 +628,7 @@ a.mail:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -664,7 +665,7 @@ a.phone{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    text-decoration: none;
+    text-decoration: none ;
     transition: all 0.5s ease-in;
 }
 a.phone:hover{
@@ -674,12 +675,12 @@ a.phone:hover{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
-    color: #FDDCC4;
+    text-decoration: none;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    text-decoration: none;
+    color: #FDDCC4;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -745,7 +746,6 @@ a.address{
     transition: all 0.5s ease-in;
 }
 a.address:hover{
-    text-decoration: none;
     width: 260px;
     height: 46px;
     font-family: Georgia;
@@ -759,6 +759,7 @@ a.address:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -784,12 +785,11 @@ a.address-london{
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
-    text-decoration: none;
     margin-bottom: 0;
+    text-decoration: none;
     transition: all 0.5s ease-in;
 }
 a.address-london:hover{
-    text-decoration: none;
     width: 260px;
     height: 23px;
     font-family: Georgia;
@@ -803,6 +803,7 @@ a.address-london:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -815,4 +816,7 @@ a.address-london:hover{
     to {
         color: #FDDCC4;
     }
+}
+.footer-puppy-768{
+    display: none;
 }

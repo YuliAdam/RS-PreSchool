@@ -35,7 +35,7 @@ header{
     right: 3.9%;
     bottom: 30px;
     display: block;
-    max-width: 708px;
+    max-width: 92.1%;
     max-height: 60px;
     margin: auto;
     display: flex;
@@ -239,7 +239,7 @@ main{
     
     width: 92.2%;
     display: block;
-    max-width: 708px;
+    min-width: 708px;
     max-height: 1603px;
     position: absolute;
     top: 4.6%;
@@ -530,18 +530,18 @@ footer{
     height: 608px;
     position: absolute;
     top: 30px;
-    left: 8%;
-    right: 3.9%;
+    left: 8.2%;
+    
     bottom: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items:flex-end;
+    align-items:flex-start;
     flex-direction: column;
     justify-content: space-between;
 }
 .footer-container{
     margin: 0;
-    width: 100%;
+    width: 640px;
     padding: 0;
     
     display: flex;
@@ -830,5 +830,5 @@ display: none;
     margin: auto;
     position: absolute;
     bottom: 0;
-    left:27%
-    }
+    right: 26%
+}
