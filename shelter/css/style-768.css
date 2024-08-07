@@ -57,6 +57,9 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+.header-burger-menu{
+    display: none;
+}
 .header-logo-container{
     height: 60px;
     width: 24%;
@@ -222,7 +225,7 @@ a.header-item-link-about:visited{
     width: 100%;
     height: auto;
 }
-.alternativ-pyppy {
+.pyppy-768{
     height: 0;
     margin: 0;
     padding: 0;
@@ -382,6 +385,9 @@ main{
     background: #F6F6F6;
     
 }
+.button-arrow-320{
+    display: none;
+}
 .pets-container{
     position: absolute;
     left: 3.1%;
@@ -412,6 +418,7 @@ main{
 .pets-slider-container{
     height: 435px;
     width: 100%;
+    margin-bottom: -9%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

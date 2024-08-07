@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen and (min-width:1280px)" href="./css/style.css">
     <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1279px)" href="./css/style-768.css">
+    <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:767px)" href="css/style-320.css">
     <script src="js/index.js"></script>
     <title>Cozy House</title>
 </head>
@@ -40,12 +41,17 @@
                 </ul>
             </nav>
         
+            <div class="header-burger-menu">
+                <p class="burger-line"></p>
+                <p class="burger-line"></p>
+                <p class="burger-line"></p>
+            </div>
         </div>
 
         <div class="not-only">
     
             <div class="header-content">
-                <h1 class="header-heading">Not only people need a house</h1>
+                <h1 class="header-heading">Not only people need&nbsp;a&nbsp;house</h1>
                 <p class="header-subheading">
                     We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!
                 </p>
@@ -56,7 +62,8 @@
             
             <div class="header-puppy">
                 <picture>
-                    <source class="alternativ-pyppy" srcset="img/img-768/start-screen-puppy.png" media="screen and (min-width:768px) and (max-width:1279px)">
+                    <source class="puppy-320" srcset="img/img-320/start-screen-puppy.png" media="screen and (min-width:320px) and (max-width:767px)">
+                    <source class="pyppy-768" srcset="img/img-768/start-screen-puppy.png" media="screen and (min-width:768px) and (max-width:1279px)">
                     <img class="puppy-img" srcset="../shelter/img/start-screen-puppy.png" src="img/start-screen-puppy.png" alt="Pyppy">
                 </picture>
             </div>
@@ -72,6 +79,7 @@
                 <div class="about-container">
                     <div class="about-pets-img">
                         <picture>
+                            <source class="alternativ-pets-img-320" srcset="img/img-320/about-pets.png" media="screen and (min-width:320px) and (max-width:767px)">
                             <source class="alternativ-pets-img" srcset="img/img-768/about-pets.png" media="screen and (min-width:768px) and (max-width:1279px)">
                             <img srcset="../shelter/img/about-pets.png" src="img/about-pets.png" alt="About Pets">
                         </picture>
@@ -88,35 +96,39 @@
 
             <section id="our-friends">
                 <div class="pets-container">  
-                            <h3 class="pets-content"> Our friends who are&nbsp;looking for a house</h3>
+                    <h3 class="pets-content"> Our friends who are&nbsp;looking for a house</h3>
                     <div class="pets-slider-container">
 
-                        <div >
-                            <button class="button-arrow" onclick="">&larr;</button>
-                        </div>
+                            <div>
+                                <button class="button-arrow" onclick="">&larr;</button>
+                            </div>
 
-                        <div class="pets-card-container">
-                            <img class="img-pets" src="../shelter/img/pets-katrine.png" alt="Photo Katrine">
-                            <p class="name-pets" >Katrine</p>
-                            <button class="button-pets-learn-more" >Learn more</button>
-                        </div>
+                            <div class="pets-card-container">
+                                <img class="img-pets" src="../shelter/img/pets-katrine.png" alt="Photo Katrine">
+                                <p class="name-pets" >Katrine</p>
+                                <button class="button-pets-learn-more" >Learn more</button>
+                            </div>
 
-                        <div class="pets-card-container-mind" >
-                            <img class="img-pets" src="../shelter/img/pets-jennifer.png" alt="Photo Katrine">
-                            <p class="name-pets" >Jennifer</p>
-                            <button class="button-pets-learn-more" >Learn more</button>
-                        </div>
+                            <div class="pets-card-container-mind" >
+                                <img class="img-pets" src="../shelter/img/pets-jennifer.png" alt="Photo Katrine">
+                                <p class="name-pets" >Jennifer</p>
+                                <button class="button-pets-learn-more" >Learn more</button>
+                            </div>
+                            
+                            <div class="pets-card-container-last-card">
+                                <img class="img-pets" src="../shelter/img/pets-woody.png" alt="Photo Katrine">
+                                <p class="name-pets" >Woody</p>
+                                <button class="button-pets-learn-more" >Learn more</button>
+                            </div>
+
+                            <div>
+                                <button class="button-arrow" onclick="">&rarr;</button>
+                            </div>
                         
-                        <div class="pets-card-container-last-card">
-                            <img class="img-pets" src="../shelter/img/pets-woody.png" alt="Photo Katrine">
-                            <p class="name-pets" >Woody</p>
-                            <button class="button-pets-learn-more" >Learn more</button>
                         </div>
-
-                        <div>
-                            <button class="button-arrow" onclick="">&rarr;</button>
-                        </div>
-                        
+                    <div class="button-arrow-container">
+                        <button class="button-arrow-320" onclick="">&larr;</button>
+                        <button class="button-arrow-320" onclick="">&rarr;</button>
                     </div>
                     <button class="pets-primary-button" onclick="document.location='../shelter/our-pets.html'">Get to know the rest</button>
                 
@@ -128,39 +140,66 @@
                     <h3 class="help-heading">How you can&nbsp;help our shelter</h3>
                     <ul class="help-list">
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-pet-food.svg" alt="icon pet food">
+                            <picture>
+                                <source src="./img/svg/svg-320/Vector.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-pet-food.svg" alt="icon pet food">
+                            </picture>
                             <p>Pet food</p>
                         </li>
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-transportation.svg" alt="icon transportation">
+                            <picture>
+                                <source src="./img/svg/svg-320/transportation.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-transportation.svg" alt="icon transportation">
+                            </picture>
                             <p>Transportation</p>
                         </li>
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-toys.svg" alt="icon toys">
+                            <picture>
+                                <source src="./img/svg/svg-320/toys.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-toys.svg" alt="icon toys">
+                            </picture>
                             <p>Toys</p>
                         </li>
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-bowls-and-cups.svg" alt="icon Bowls and cups">
+                            <picture>
+                                <source src="./img/svg/svg-320/bowls-and-cups.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-bowls-and-cups.svg" alt="icon Bowls and cups">
+                            </picture>
                             <p>Bowls and cups</p>
                         </li>
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-shampoos.svg" alt="icon shampoos">
+                            <picture>
+                                <source src="./img/svg/svg-320/shampoos.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-shampoos.svg" alt="icon shampoos">
+                            </picture>
                             <p>Shampoos</p>
                         </li>
                         <li class="help-item-vitamins">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-vitamins.svg" alt="icon vitamins">
+                            <picture>
+                                <source src="./img/svg/svg-320/vitamins.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-vitamins.svg" alt="icon vitamins">
+                            </picture>
                             <p>Vitamins</p>
                         </li>
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-medicines.svg" alt="icon medicines">
+                            <picture>
+                                <source src="./img/svg/svg-320/medicines.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-medicines.svg" alt="icon medicines">
+                            </picture>
                             <p>Medicines</p>
                         </li>
                         <li class="help-item">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-collars-leashes.svg" alt="icon collars-leashes">
+                            <picture>
+                                <source src="./img/svg/svg-320/collars-or-leashes.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-collars-leashes.svg" alt="icon collars-leashes">
+                            </picture>
                             <p>Collars / leashes</p>
                         </li>
                         <li class="help-item-last">
-                            <img class="help-list-icon" src="../shelter/img/svg/icon-sleeping-area.svg" alt="icon sleeping area">
+                            <picture>
+                                <source src="./img/svg/svg-320/sleeping-area.png" media="screen and (min-width:320px) and (max-width:767px)">
+                                <img class="help-list-icon" src="../shelter/img/svg/icon-sleeping-area.svg" alt="icon sleeping area">
+                            </picture>
                             <p>Sleeping areas</p>
                         </li>
                     </ul>
@@ -170,9 +209,12 @@
             <section id="in-addition">
 
                 <div class="donation-container">
-                    <img class="donation-img" src="../shelter/img/donation-dog.png" alt="img dog">
+                    <picture>
+                        <source src="./img/img-320/donation-dog.png" media="screen and (min-width:320px) and (max-width:767px)">
+                        <img class="donation-img" src="../shelter/img/donation-dog.png" alt="img dog">
+                    </picture>
                     <div class="donation-content">
-                        <h3 class="donation-heading">You can also make a donation</h3>
+                        <h3 class="donation-heading">You can also make&nbsp;a&nbsp;donation</h3>
                         <h5 class="donation-subheading">Name of the bank / Type of bank account</h5>
                         <div class="donation-credit-card">
                             <img class="credit-icon" src="../shelter/img/svg/credit-card.svg" alt="icon credit card">
@@ -202,7 +244,7 @@
                 </div>
             </div>
             <div class="footer-address-container">
-                <h3 class="address-title">We are waiting for your visit</h3>
+                <h3 class="address-title">We are waiting for your&nbsp;visit</h3>
                 <div class="address-1">
                     <a href="https://maps.app.goo.gl/keGENFfdQcJAWRgcA" target="_blank"><img class="address-icon" src="../shelter/img/svg/icon-marker.svg" alt="icon address"></a>
                     <a class="address" href="https://maps.app.goo.gl/keGENFfdQcJAWRgcA" target="_blank">1 Central Street, Boston (entrance from the store)</a>
@@ -215,8 +257,11 @@
 
             <img class="footer-puppy" src="../shelter/img/footer-puppy.png" alt="img puppy">
         </div>
-        <img class="footer-puppy-768" src="../shelter/img/footer-puppy.png" alt="img puppy1">
-    </div>
+        <picture>
+            <source src="./img/img-320/footer-puppy.png" media="screen and (min-width:320px) and (max-width:767px)">
+            <img class="footer-puppy-768" src="../shelter/img/footer-puppy.png" alt="img puppy1">
+        </picture>
+        </div>
   </footer>
 
 </body>
