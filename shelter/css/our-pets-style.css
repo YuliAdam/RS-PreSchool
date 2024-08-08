@@ -18,6 +18,7 @@ body{
     margin: 0;
     padding: 0;
 }
+
 header{
     height: 120px;
     display: block;
@@ -64,7 +65,7 @@ a.header-logo-title:visited{
     color: #545454;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-align: left;
     height: 35px;
     transition: all 0.5s ease-in;
@@ -78,7 +79,7 @@ a.header-logo-title:hover{
     color: #292929;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     height: 35px;
     animation-name: logo;
     animation-duration:1s;
@@ -279,7 +280,9 @@ main{
     justify-content:space-between;
     flex-direction:row 
 }
-.pets-card-container{
+.pets-card-container,
+.pets-card-container-Scarlet
+{
     height: 435px;
     width: 270;
     display: flex;
@@ -291,7 +294,8 @@ main{
     border-radius: 9px;
     transition: all 0.5s ease-in;
 }
-.pets-card-container:hover{
+.pets-card-container:hover,
+.pets-card-container-Scarlet:hover{
     height: 435px;
     width: 270;
     display: flex;
@@ -315,7 +319,8 @@ main{
         background: #FFFFFF;
     }
 }
-.pets-card-container:hover .button-pets-learn-more{
+.pets-card-container:hover .button-pets-learn-more,
+.pets-card-container-Scarlet:hover .button-pets-learn-more{
     width: 187px;
     height: 52px;
     border: 2px solid #FDDCC4;
@@ -520,19 +525,20 @@ footer{
     margin: none;
     position: relative;
 }
+
 .footer-container{
     position: absolute;
-    top: 40px;
+    top: 6px;
     left: 40px;
     right: 40px;
     bottom: 0;
     display: block;
-    max-width: 1280px;
+    max-width: 1200px;
     max-height: 310px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items:flex-start;
     justify-content: space-between;
     padding-top: 16px;
     padding-bottom: 60px;
@@ -541,7 +547,7 @@ footer{
     padding-bottom: 0;
     padding-top: 0;
 }
-#footer-contact-container{
+#contact{
     width: 287px;
     height: 234px;
     display: flex;
@@ -595,7 +601,7 @@ footer{
         z-index: 2;
     }
 }
-a.mail{
+a.mail:active,a.mail:link{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -610,8 +616,7 @@ a.mail{
     text-decoration: none;
     transition: all 0.5s ease-in;
 }
-a.mail:hover{
-    text-decoration: none;
+a.mail:active,a.mail:hover{
     font-family: Georgia;
     font-style: normal;
     font-weight: 400;
@@ -623,6 +628,7 @@ a.mail:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -659,7 +665,7 @@ a.phone{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    text-decoration: none;
+    text-decoration: none ;
     transition: all 0.5s ease-in;
 }
 a.phone:hover{
@@ -669,12 +675,12 @@ a.phone:hover{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
-    color: #FDDCC4;
+    text-decoration: none;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    text-decoration: none;
+    color: #FDDCC4;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -740,7 +746,6 @@ a.address{
     transition: all 0.5s ease-in;
 }
 a.address:hover{
-    text-decoration: none;
     width: 260px;
     height: 46px;
     font-family: Georgia;
@@ -754,6 +759,7 @@ a.address:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -779,12 +785,11 @@ a.address-london{
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
-    text-decoration: none;
     margin-bottom: 0;
+    text-decoration: none;
     transition: all 0.5s ease-in;
 }
 a.address-london:hover{
-    text-decoration: none;
     width: 260px;
     height: 23px;
     font-family: Georgia;
@@ -798,6 +803,7 @@ a.address-london:hover{
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    text-decoration: none;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -810,4 +816,7 @@ a.address-london:hover{
     to {
         color: #FDDCC4;
     }
+}
+.footer-puppy-768{
+    display: none;
 }
