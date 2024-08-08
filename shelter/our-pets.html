@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen and (min-width:1280px)" href="./css/our-pets-style.css">
     <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1279px)" href="css/our-pets-style-768.css">
+    <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:767px)" href="css/our-pets-style-320.css">
     <script src="js/index.js"></script>
     <title>Cozy House</title>
 </head>
@@ -37,7 +38,11 @@
                     </li>
                 </ul>
             </nav>
-        
+            <div class="header-burger-menu">
+                <p class="burger-line"></p>
+                <p class="burger-line"></p>
+                <p class="burger-line"></p>
+            </div>
         </div>
   </header>
 
@@ -54,13 +59,13 @@
                     <button class="button-pets-learn-more"  >Learn more</button>
                 </div>
 
-                <div class="pets-card-container" >
+                <div class="pets-card-container-Jennifer" >
                     <img class="img-pets" src="../shelter/img/pets-jennifer.png" alt="Photo Jennifer">
                     <p class="name-pets" >Jennifer</p>
                     <button class="button-pets-learn-more">Learn more</button>
                 </div>
                 
-                <div class="pets-card-container">
+                <div class="pets-card-container-Woody">
                     <img class="img-pets" src="../shelter/img/pets-woody.png" alt="Photo Woody">
                     <p class="name-pets" >Woody</p>
                     <button class="button-pets-learn-more"  >Learn more</button>
@@ -107,6 +112,7 @@
     </section>
   </main>
 
+
   <footer>
     <div class="footer-container-768">
         <div class="footer-container">
@@ -122,7 +128,7 @@
                 </div>
             </div>
             <div class="footer-address-container">
-                <h3 class="address-title">We are waiting for your visit</h3>
+                <h3 class="address-title">We are waiting for your&nbsp;visit</h3>
                 <div class="address-1">
                     <a href="https://maps.app.goo.gl/keGENFfdQcJAWRgcA" target="_blank"><img class="address-icon" src="../shelter/img/svg/icon-marker.svg" alt="icon address"></a>
                     <a class="address" href="https://maps.app.goo.gl/keGENFfdQcJAWRgcA" target="_blank">1 Central Street, Boston (entrance from the store)</a>
@@ -135,8 +141,11 @@
 
             <img class="footer-puppy" src="../shelter/img/footer-puppy.png" alt="img puppy">
         </div>
-        <img class="footer-puppy-768" src="../shelter/img/footer-puppy.png" alt="img puppy1">
-    </div>
+        <picture>
+            <source src="./img/img-320/footer-puppy.png" media="screen and (min-width:320px) and (max-width:767px)">
+            <img class="footer-puppy-768" src="../shelter/img/footer-puppy.png" alt="img puppy1">
+        </picture>
+        </div>
   </footer>
 </body>
 </html>   

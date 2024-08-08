@@ -281,7 +281,9 @@ main{
     flex-direction:row 
 }
 .pets-card-container,
-.pets-card-container-Scarlet
+.pets-card-container-Scarlet,
+.pets-card-container-Jennifer,
+.pets-card-container-Woody
 {
     height: 435px;
     width: 270;
@@ -295,7 +297,9 @@ main{
     transition: all 0.5s ease-in;
 }
 .pets-card-container:hover,
-.pets-card-container-Scarlet:hover{
+.pets-card-container-Scarlet:hover,
+.pets-card-container-Jennifer:hover,
+.pets-card-container-Woody:hover{
     height: 435px;
     width: 270;
     display: flex;
@@ -320,7 +324,9 @@ main{
     }
 }
 .pets-card-container:hover .button-pets-learn-more,
-.pets-card-container-Scarlet:hover .button-pets-learn-more{
+.pets-card-container-Scarlet:hover .button-pets-learn-more,
+.pets-card-container-Jennifer:hover .button-pets-learn-more,
+.pets-card-container-Woody:hover .button-pets-learn-more{
     width: 187px;
     height: 52px;
     border: 2px solid #FDDCC4;
