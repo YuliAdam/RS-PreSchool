@@ -207,13 +207,13 @@ a.header-item-link-about:visited{
 }
 .not-only{
     height: 1015px;
-    width: 90.1%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    margin-left: 14.5%;
+    margin-left: 14.2%;
 }
 .pyppy-img{
     padding-left: 10%;
@@ -240,7 +240,7 @@ a.header-item-link-about:visited{
     align-items: center;
     flex-direction: column;
     margin : 0;  
-    margin-right: 28.3%;
+    margin-right: 28%;
 }
 
 .header-heading{
