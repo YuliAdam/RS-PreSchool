@@ -17,6 +17,11 @@ body{
     min-width: 320px;
     margin: 0;
     padding: 0;
+    overflow: auto;
+}
+
+.overflow{
+    overflow: hidden !important;
 }
 
 header{
@@ -110,28 +115,192 @@ a.header-logo-title:hover{
     padding-left: 4px;
     margin: 0;
 }
-.header-navigation{
-    display: none;
- }
+
  .header-burger-menu{
-     width: 30px;
-     height: 22px;
-     position: absolute;
-     right: 3%;
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-between;
-     flex-direction: column;
- 
- }
- .burger-line{
-     width: 30px;
-     background-color: #000000;
-     height: 2px;
-     padding: none;
-     margin: 0;
- }
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    right: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: all 0.3s ease 0s;
+    z-index: 50;
+}
+
+.burger-line{
+    width: 30px;
+    background-color: #000000;
+    height: 2px;
+    padding: none;
+    margin: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.header-burger-menu.active {
+    transform: rotate(90deg) ;
+    z-index: 50;
+    position: fixed;
+    right: 22px;
+}
+.header-burger-menu.active p{
+    background-color: #F1CDB3;
+}
+
+.blackout{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    z-index: 0;
+}
+
+.on{
+    display: block !important;
+}
+.open {
+    right:0 !important;
+}
+
+.header-navigation{
+    position: fixed;
+    height: 100%;
+    top:0;
+    right:-320px;
+    padding-top: 38.5vh;
+    width: 320px;
+    padding: none;
+    background: #292929;
+    z-index: 50;
+    animation: burger 0.5s;
+    transition: all 0.5s ease-in;
+}
+
+
+@keyframes burger{
+    from{width: 0;}
+    to{width: 320px;}
+}
+.header-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 327px;
+    margin: 0;
+    padding: 0;
+    animation: list-animation 0.5s;
+}
+@keyframes list-animation{
+    from{opacity: 0;}
+    50% {opacity: 0;}
+    to{opacity: 1;}
+}
+.header-item{
+    align-items: center;
+    list-style-type: none;
+}
+.header-line{
+    background-color: #F1CDB3;
+    height: 3px;
+    padding: none;
+    margin: 0;
+    top:0%;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+a.header-item-link:link,
+a.header-item-link:visited{
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #CDCDCD;
+    text-decoration: none;
+    transition: all 0.5s ease-in;
+}
+a.header-item-link:hover{
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #FAFAFA;
+    text-decoration: none;
+    animation-name: nav;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes nav {
+    from {
+        color: #CDCDCD;
+    }
+  
+    to {
+        color: #FAFAFA;
+    }
+}
+a.header-item-link-line:link,
+a.header-item-link-line:visited,a.header-item-link-line:hover{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #CDCDCD;
+    text-decoration: none;
+    cursor: default;
+}
+a.header-item-link-last:link,
+a.header-item-link-last:visited{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color:  #CDCDCD;
+    text-decoration: none;
+    transition: all 0.5s ease-in;
+}
+a.header-item-link-last:hover{
+    height: 24px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #FAFAFA;
+    text-decoration: none;
+    animation-name: nav-last;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; 
+}
+@keyframes nav-last {
+    from {
+        color: #CDCDCD;
+    }
+  
+    to {
+        color: #FAFAFA;;
+    }
+}
+
+
+
+
+
+
 main{
     height: 1649px;
     background: #F6F6F6;
