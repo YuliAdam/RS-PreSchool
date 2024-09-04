@@ -398,7 +398,18 @@ main{
     flex-wrap: wrap;
     align-items: center;
     justify-content:space-between;
-    flex-direction:row 
+    flex-direction:row ;
+}
+
+.cards{
+    height: 435px;
+    width: 990px;
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content:space-between;
+    flex-direction:row ;
+    overflow: hidden;
 }
 
 .pets-primary-button{
@@ -483,8 +494,18 @@ main{
     }
 }
 
+.dont-show-slide{
+    width: 0 !important;
+    margin-right: 0 !important;
+}
+.pets-card-container-Freddie,
+.pets-card-container-Scarlet,
+.pets-card-container-Charly,
+.pets-card-container-Timmy,
+.pets-card-container-Sophia,
 .pets-card-container,
-.pets-card-container-last-card{
+.pets-card-container-last-card,
+.pets-card-container-mind{
     height: 435px;
     width: 270px;
     display: flex;
@@ -494,8 +515,10 @@ main{
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
-    transition: all 0.5s ease-in;
+    margin-right: 90px;
+    transition: background,width,margin-right 0.5s ease-in; 
 }
+
 .pets-card-container:hover,
 .pets-card-container-last-card:hover{
     height: 435px;
@@ -512,6 +535,7 @@ main{
     animation-duration: 0.5s;
     animation-iteration-count: 1;
 }
+
 @keyframes slidein {
     from {
         background: #FAFAFA;
@@ -523,7 +547,12 @@ main{
 }
 .pets-card-container:hover .button-pets-learn-more,
 .pets-card-container-mind:hover .button-pets-learn-more,
-.pets-card-container-last-card:hover .button-pets-learn-more{
+.pets-card-container-last-card:hover .button-pets-learn-more,
+.pets-card-container-Freddie:hover .button-pets-learn-more ,
+.pets-card-container-Scarlet:hover .button-pets-learn-more,
+.pets-card-container-Charly:hover .button-pets-learn-more,
+.pets-card-container-Timmy:hover .button-pets-learn-more,
+.pets-card-container-Sophia:hover .button-pets-learn-more{
     width: 187px;
     height: 52px;
     border: 2px solid #FDDCC4;
@@ -543,25 +572,30 @@ main{
     animation-iteration-count: 1;
 }
 
-.pets-card-container-mind{
+
+.pets-card-container-Freddie:hover,
+.pets-card-container-Scarlet:hover,
+.pets-card-container-Charly:hover,
+.pets-card-container-Timmy:hover,
+.pets-card-container-Sophia:hover{
     height: 435px;
     width: 270px;
-    margin-left:35px;
-    margin-right: 35px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    background: #FAFAFA;
-    transition: all 0.5s ease-in;
+    background: #FFFFFF;
     border-radius: 9px;
+    cursor: pointer;
+    animation-name: slidein;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
+
 .pets-card-container-mind:hover{
     height: 435px;
     width: 270px;
-    margin-left:35px;
-    margin-right: 35px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -605,6 +639,7 @@ main{
     background: #FAFAFA;
     transition: all 0.5s ease-in;
 }
+
 
 .button-pets-learn-more:hover{
     width: 187px;
