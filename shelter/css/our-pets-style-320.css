@@ -354,14 +354,14 @@ main{
     padding-top: 4.5px;
     
 }
+.pets-card-container-Freddie,
 .pets-card-container-Scarlet,
-.pets-card-container:last-child,
-.pets-card-container{
-    display: none;
-}
-.pets-card-container:first-child,
 .pets-card-container-Jennifer,
-.pets-card-container-Woody{
+.pets-card-container-Woody,
+.pets-card-container-Katrine,
+.pets-card-container-Sophia,
+.pets-card-container-Timmy,
+.pets-card-container-Charly{
     height: 435px;
     width: 270px;
     display: flex;
@@ -373,9 +373,14 @@ main{
     border-radius: 9px;
     transition: all 0.5s ease-in;
 }
-.pets-card-container:first-child:hover,
+.pets-card-container-Freddie:hover,
+.pets-card-container-Scarlet:hover,
 .pets-card-container-Jennifer:hover,
-.pets-card-container-Woody:hover{
+.pets-card-container-Woody:hover,
+.pets-card-container-Katrine:hover,
+.pets-card-container-Sophia:hover,
+.pets-card-container-Timmy:hover,
+.pets-card-container-Charly:hover{
     height: 435px;
     width: 270;
     display: flex;
@@ -399,9 +404,14 @@ main{
         background: #FFFFFF;
     }
 }
-.pets-card-container:first-child:hover .button-pets-learn-more,
+.pets-card-container-Freddie:hover .button-pets-learn-more,
+.pets-card-container-Scarlet:hover .button-pets-learn-more,
 .pets-card-container-Jennifer:hover .button-pets-learn-more,
-.pets-card-container-Woody:hover .button-pets-learn-more{
+.pets-card-container-Woody:hover .button-pets-learn-more,
+.pets-card-container-Katrine:hover .button-pets-learn-more,
+.pets-card-container-Sophia:hover .button-pets-learn-more,
+.pets-card-container-Timmy:hover .button-pets-learn-more,
+.pets-card-container-Charly:hover .button-pets-learn-more{
     width: 187px;
     height: 52px;
     border: 2px solid #FDDCC4;
@@ -496,9 +506,14 @@ main{
     justify-content: space-between;
     width: 93.75%;
     height: 52px;
-    margin-bottom: ;
 }
-.button-next{
+.pages-end{
+    border: 2px solid #CDCDCD !important;
+    color:  #CDCDCD !important;
+    background:#F6F6F6 !important;
+    cursor: default !important;
+}
+.button-next,.button-end,.button-last, .button-first{
     box-sizing: border-box;
     width: 52px;
     height: 52px;
@@ -515,7 +530,7 @@ main{
     letter-spacing: 0.06em;
     transition: all 0.5s ease-in;
 }
-.button-next:hover{
+.button-next:hover, .button-end:hover, .button-last:hover, .button-first:hover{
     box-sizing: border-box;
     width: 52px;
     height: 52px;
@@ -578,22 +593,6 @@ main{
     letter-spacing: 0.06em;
     cursor: default;
     background: #F1CDB3;
-}
-.button-last{
-    box-sizing: border-box;
-    width: 52px;
-    height: 52px;
-    border-radius: 100px;
-    border: 2px solid #CDCDCD;
-    font-size:medium;
-    font-weight: 1000;
-    color:  #CDCDCD;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
 }
 footer{  
     background: url(../img/footer-background.png);
