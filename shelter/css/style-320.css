@@ -27,14 +27,16 @@ body{
     top: 0;
     height: 100vh;
     width: 100%;
-    background: rgba(41, 41, 41, 0.6);
+    background-color: rgba(41, 41, 41, 0.6);
     z-index: 0;
 }
 
 .on{
     display: block !important;
 }
-
+.overflow-burger{
+    overflow: hidden !important;
+}
 .overflow{
     overflow: hidden !important;
 }
@@ -166,7 +168,7 @@ a.header-logo-title:hover{
     margin: 0;
 }
 
-.header-burger-menu.active {
+.active {
     transform: rotate(90deg) ;
     z-index: 50;
     position: fixed;
@@ -615,6 +617,12 @@ display: none;
     background: #FAFAFA;
     border-radius: 9px;
     transition: background,width,margin-right 0.5s ease-in;
+    animation: pagination 0.5s;
+    opacity: 100%;
+}
+@keyframes pagination{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
 }
 .pets-card-container:hover,
 .pets-card-container-last-card:hover,

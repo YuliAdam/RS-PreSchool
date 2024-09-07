@@ -18,7 +18,7 @@ document.querySelector('.header-burger-menu')
     this.classList.toggle('active');
     document.querySelector('.header-navigation')
             .classList.toggle('open');
-    document.body.classList.toggle('overflow');
+    document.body.classList.toggle('overflow-burger');
     let el = document.querySelectorAll('.blackout')
     for(let e of el){
     e.classList.toggle('on');}
@@ -32,7 +32,7 @@ document
     var div1 = document.querySelector('.header-burger-menu.active');
     if (div !== e.target && !div1.contains(e.target)){
         div.classList.remove('open');
-        document.body.classList.toggle('overflow');
+        document.body.classList.remove('overflow-burger');
         document.querySelector('.header-burger-menu.active')
         .classList.remove('active');
         let el = document.querySelectorAll('.blackout')
@@ -68,8 +68,6 @@ let slides = [
     document.querySelector('.pets-card-container-Freddie').cloneNode(true),
 ]
 
-let numCard = [0,1,2,3,4,5,6,7,];
-
 function getRandomInt (min, max){
     min = Math.ceil(min);
     max= Math.floor(max);
@@ -79,11 +77,11 @@ function getRandomInt (min, max){
 //Functionality Popup
 function eventPopup (num){
     return function() {
-        popupElem[num].classList.toggle('on');
-        document.body.classList.toggle('overflow');
-        popupOverlay.classList.toggle('on');
+        popupElem[num].classList.add('on');
+        document.body.classList.add('overflow');
+        popupOverlay.classList.add('on');
         for(let el of popupCloseButton){
-            el.classList.toggle('on');
+            el.classList.add('on');
         }
         
     }
@@ -113,7 +111,7 @@ document
         } 
     }
 })
-function deletePupup (slidesNowTris,first){
+function deletePupup (slidesNowTris){
     for(let i=0;i< slidesNowTris.length;i++){
         let num = 0;
         for(let j = 0; j<slides.length; j++){

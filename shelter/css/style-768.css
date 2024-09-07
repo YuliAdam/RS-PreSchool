@@ -545,6 +545,12 @@ main{
     background: #FAFAFA;
     border-radius: 9px;
     transition: background,width,margin-right 0.5s ease-in;
+    animation: pagination 0.5s;
+    opacity: 100%;
+}
+@keyframes pagination{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
 }
 .pets-card-container:hover,
 .pets-card-container-Freddie:hover,

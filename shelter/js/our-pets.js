@@ -18,7 +18,7 @@ document.querySelector('.header-burger-menu')
     this.classList.toggle('active');
     document.querySelector('.header-navigation')
             .classList.toggle('open');
-    document.body.classList.toggle('overflow');
+    document.body.classList.toggle('overflow-burger');
     let el = document.querySelectorAll('.blackout')
     for(let e of el){
     e.classList.toggle('on');}
@@ -32,7 +32,7 @@ document
     var div1 = document.querySelector('.header-burger-menu.active');
     if (div !== e.target && !div1 .contains(e.target)){
         div.classList.remove('open');
-        document.body.classList.toggle('overflow');
+        document.body.classList.remove('overflow-burger');
         document.querySelector('.header-burger-menu.active')
         .classList.remove('active');
         let el = document.querySelectorAll('.blackout')
@@ -42,11 +42,20 @@ document
     }
 })
 
-function getRandomInt (min, max){
-    min = Math.ceil(min);
-    max= Math.floor(max);
-    return Math.floor(Math.random()*(max-min)+min)
-}
+// Const let
+
+const popupCloseButton = document.querySelectorAll('.popup-close');
+const popupOverlay = document.querySelector('.popup-overlay');
+const popupElem = [
+    document.querySelector('.popup-Katrine'),
+    document.querySelector('.popup-Jennifer'),
+    document.querySelector('.popup-Woody'),
+    document.querySelector('.popup-Sophia'),
+    document.querySelector('.popup-Timmy'),
+    document.querySelector('.popup-Charly'),  
+    document.querySelector('.popup-Scarlet'),
+    document.querySelector('.popup-Freddie'),
+];
 
 let slides = [
     document.querySelector('.pets-card-container-Katrine').cloneNode(true),
@@ -59,6 +68,61 @@ let slides = [
     document.querySelector('.pets-card-container-Freddie').cloneNode(true),
 ]
 
+//Functionality Popup
+function eventPopup (num){
+    return function() {
+        popupElem[num].classList.add('on');
+        document.body.classList.add('overflow');
+        popupOverlay.classList.add('on');
+        for(let el of popupCloseButton){
+            el.classList.add('on');
+        }
+        
+    }
+}
+function openPupup (slidesNowTris){
+    for(let i=0;i< slidesNowTris.length;i++){
+        let num = 0;
+        for(let j = 0; j<slides.length; j++){
+            if(slidesNowTris[i].isEqualNode(slides[j])){
+                num = j;
+            }
+        }
+        slidesNowTris[i].addEventListener('click',eventPopup(num))
+    }
+    console.log('add');
+}
+document
+.addEventListener('mouseup',function(e){
+
+    if (!e.composedPath().some(elem => popupElem.includes(elem))
+    || e.composedPath().some(elem => elem.isEqualNode(document.querySelector('.popup-close')))){
+        for(let el of popupElem){
+            el.classList.remove('on');
+            document.body.classList.remove('overflow');
+            popupOverlay.classList.remove('on');
+            for(let el of popupCloseButton){el.classList.remove('on');}
+        } 
+    }
+})
+function deletePupup (slidesNowTris){
+    for(let i=0;i< slidesNowTris.length;i++){
+        let num = 0;
+        for(let j = 0; j<slides.length; j++){
+            if(slidesNowTris[i].isEqualNode(slides[j])){
+                num = j;
+            }
+        }
+        slidesNowTris[i].removeEventListener('click',eventPopup(num))
+    }
+    console.log('delete');
+}
+
+function getRandomInt (min, max){
+    min = Math.ceil(min);
+    max= Math.floor(max);
+    return Math.floor(Math.random()*(max-min)+min)
+}
 
 function shuffle (arr){
     for(let i = arr.length-1; i > 0 ;i-- ){ 
@@ -105,25 +169,29 @@ console.log(pagesArray320);
 function carouselByWidth(size){ 
 //Width 320
     if( size < 768 && size >= 320){
-    setTimeout(function(){
+        setTimeout(function(){
         //First page
+            deletePupup(slides); 
             let numClick320 = 1;
             setTimeout(function(){
                 while(sliderContainer.firstChild){
-                    sliderContainer.removeChild(sliderContainer.firstChild);
+                    deletePupup([sliderContainer.firstChild]);
+                    sliderContainer.removeChild(sliderContainer.firstChild); 
                 }
             },300)
             setTimeout(function(){ buttonNow.textContent = numClick320; },700); 
             setTimeout(function(){
                 for(let i = 0; i< 3; i++){
                     sliderContainer.append(slides[pagesArray320[0][i]]); 
+                    openPupup([slides[pagesArray320[0][i]]]);
                 }   
+                
             },600)
             buttonLast.classList.add('pages-end');
             buttonFirst.classList.add('pages-end');
             buttonNext.classList.remove('pages-end'); 
             buttonEnd.classList.remove('pages-end');
-        
+            
         //Click next
             buttonNext.addEventListener('click',function(e){
                 //for(let i = 0; i<document.querySelector('.pets-slider-container').childElementCount;i++){
@@ -142,6 +210,7 @@ function carouselByWidth(size){
                 if(numClick320 < 16){ 
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },800)
@@ -149,19 +218,25 @@ function carouselByWidth(size){
                     setTimeout(function(){
                         for(let i = 0; i< 3; i++){
                             sliderContainer.append(slides[pagesArray320[numClick320-1][i]]); 
-                        }   
+                            openPupup([slides[pagesArray320[numClick320-1][i]]]); 
+                        }  
+                        
                     },900)
+
                 }else if(numClick320 === 16){
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },800)
     
                     setTimeout(function(){
                         for(let i = 0; i< 3; i++){
-                            sliderContainer.append(slides[pagesArray320[15][i]]); 
-                        }   
+                            sliderContainer.append(slides[pagesArray320[15][i]]);  
+                            openPupup([slides[pagesArray320[15][i]]]);  
+                        } 
+                          
                     },900)
                     buttonNext.classList.add('pages-end');
                     buttonEnd.classList.add('pages-end');
@@ -179,14 +254,17 @@ function carouselByWidth(size){
                     if(numClick320 < 16){
                         setTimeout(function(){
                             while(sliderContainer.firstChild){
+                                deletePupup([sliderContainer.firstChild]);
                                 sliderContainer.removeChild(sliderContainer.firstChild);
                             }
                         },800)
     
                         setTimeout(function(){
                             for(let i = 0; i< 3; i++){
-                                sliderContainer.append(slides[pagesArray320[15][i]]); 
-                            }   
+                                sliderContainer.append(slides[pagesArray320[15][i]]);
+                                openPupup([slides[pagesArray320[15][i]]]); 
+                            }    
+                            
                         },900)
                         buttonNext.classList.add('pages-end');
                         buttonEnd.classList.add('pages-end');
@@ -213,6 +291,7 @@ function carouselByWidth(size){
                 if(numClick320 > 1){ 
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },800)
@@ -220,11 +299,14 @@ function carouselByWidth(size){
                     setTimeout(function(){
                         for(let i = 0; i< 3; i++){
                             sliderContainer.append(slides[pagesArray320[numClick320-1][i]]); 
-                        }   
+                            openPupup([slides[pagesArray320[numClick320-1][i]]]);
+                        } 
+                          
                     },900)
                 }else if(numClick320 === 1){
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },800)
@@ -232,6 +314,7 @@ function carouselByWidth(size){
                     setTimeout(function(){
                         for(let i = 0; i< 3; i++){
                             sliderContainer.append(slides[pagesArray320[0][i]]); 
+                            openPupup([slides[pagesArray320[0][i]]]); 
                         }   
                     },900)
                     buttonLast.classList.add('pages-end');
@@ -250,6 +333,7 @@ function carouselByWidth(size){
                     if(numClick320 > 1){
                         setTimeout(function(){
                             while(sliderContainer.firstChild){
+                                deletePupup([sliderContainer.firstChild]);
                                 sliderContainer.removeChild(sliderContainer.firstChild);
                             }
                         },800)
@@ -257,7 +341,9 @@ function carouselByWidth(size){
                         setTimeout(function(){
                             for(let i = 0; i< 3; i++){
                                 sliderContainer.append(slides[pagesArray320[0][i]]); 
+                                openPupup([slides[pagesArray320[0][i]]]); 
                             }   
+                           
                         },900)
                         buttonLast.classList.add('pages-end');
                         buttonFirst.classList.add('pages-end');
@@ -275,6 +361,7 @@ function carouselByWidth(size){
         let numClick768 = 1;
         setTimeout(function(){
             while(sliderContainer.firstChild){
+                deletePupup([sliderContainer.firstChild]);
                 sliderContainer.removeChild(sliderContainer.firstChild);
             }
         },300)
@@ -282,7 +369,9 @@ function carouselByWidth(size){
         setTimeout(function(){
             for(let i = 0; i< 6; i++){
                 sliderContainer.append(slides[pagesArray768[0][i]]); 
+                openPupup([slides[pagesArray768[0][i]]]); 
             }   
+            
         },600)
         buttonLast.classList.add('pages-end');
         buttonFirst.classList.add('pages-end');
@@ -307,26 +396,32 @@ function carouselByWidth(size){
             if(numClick768 < 8){ 
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },800)
 
                 setTimeout(function(){
                     for(let i = 0; i< 6; i++){
-                        sliderContainer.append(slides[pagesArray768[numClick768-1][i]]); 
-                    }   
+                        sliderContainer.append(slides[pagesArray768[numClick768-1][i]]);   
+                        openPupup([slides[pagesArray768[numClick768-1][i]]]); 
+                    }    
+                
                 },900)
             }else if(numClick768 === 8){
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },800)
 
                 setTimeout(function(){
                     for(let i = 0; i< 6; i++){
-                        sliderContainer.append(slides[pagesArray768[7][i]]); 
-                    }   
+                        sliderContainer.append(slides[pagesArray768[7][i]]);   
+                        openPupup([slides[pagesArray768[7][i]]]);
+                    }    
+                    
                 },900)
                 buttonNext.classList.add('pages-end');
                 buttonEnd.classList.add('pages-end');
@@ -344,6 +439,7 @@ function carouselByWidth(size){
                 if(numClick768 < 8){
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },800)
@@ -351,7 +447,9 @@ function carouselByWidth(size){
                     setTimeout(function(){
                         for(let i = 0; i< 6; i++){
                             sliderContainer.append(slides[pagesArray768[7][i]]); 
-                        }   
+                            openPupup([slides[pagesArray768[7][i]]]);
+                        } 
+                          
                     },900)
                     buttonNext.classList.add('pages-end');
                     buttonEnd.classList.add('pages-end');
@@ -378,6 +476,7 @@ function carouselByWidth(size){
             if(numClick768 > 1){ 
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },800)
@@ -385,11 +484,14 @@ function carouselByWidth(size){
                 setTimeout(function(){
                     for(let i = 0; i< 6; i++){
                         sliderContainer.append(slides[pagesArray768[numClick768-1][i]]); 
-                    }   
+                        openPupup([slides[pagesArray768[numClick768-1][i]]]); 
+                    } 
+                      
                 },900)
             }else if(numClick768 === 1){
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },800)
@@ -397,7 +499,9 @@ function carouselByWidth(size){
                 setTimeout(function(){
                     for(let i = 0; i< 6; i++){
                         sliderContainer.append(slides[pagesArray768[0][i]]); 
+                        openPupup([slides[pagesArray768[0][i]]]); 
                     }   
+                    
                 },900)
                 buttonLast.classList.add('pages-end');
                 buttonFirst.classList.add('pages-end');
@@ -415,14 +519,17 @@ function carouselByWidth(size){
                 if(numClick768 > 1){
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },800)
 
                     setTimeout(function(){
                         for(let i = 0; i< 6; i++){
-                            sliderContainer.append(slides[pagesArray768[0][i]]); 
-                        }   
+                            sliderContainer.append(slides[pagesArray768[0][i]]);
+                            openPupup([slides[pagesArray768[0][i]]]);  
+                        }  
+                         
                     },900)
                     buttonLast.classList.add('pages-end');
                     buttonFirst.classList.add('pages-end');
@@ -441,12 +548,15 @@ function carouselByWidth(size){
         setTimeout(function(){ buttonNow.textContent = numClick1280; },700);
         
         while(sliderContainer.firstChild){
+            deletePupup([sliderContainer.firstChild]);
             sliderContainer.removeChild(sliderContainer.firstChild);
         }
         setTimeout(function(){
             for(let i = 0; i< 8; i++){
                 sliderContainer.append(slides[pagesArray1280[0][i]]); 
-            }   
+                openPupup([slides[pagesArray1280[0][i]]]); 
+            }  
+            
         },800)
         buttonLast.classList.add('pages-end');
         buttonFirst.classList.add('pages-end');
@@ -470,6 +580,7 @@ function carouselByWidth(size){
             if(numClick1280 < 6){ 
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },600)
@@ -477,11 +588,14 @@ function carouselByWidth(size){
                 setTimeout(function(){
                     for(let i = 0; i< 8; i++){
                         sliderContainer.append(slides[pagesArray1280[numClick1280-1][i]]); 
+                        openPupup([slides[pagesArray1280[numClick1280-1][i]]]); 
                     }   
+                    
                 },800)
             }else if(numClick1280 === 6){
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },600)
@@ -489,7 +603,9 @@ function carouselByWidth(size){
                 setTimeout(function(){
                     for(let i = 0; i< 8; i++){
                         sliderContainer.append(slides[pagesArray1280[5][i]]); 
+                        openPupup([slides[pagesArray1280[5][i]]]); 
                     }   
+                    
                 },800)
                 buttonNext.classList.add('pages-end');
                 buttonEnd.classList.add('pages-end');
@@ -507,6 +623,7 @@ function carouselByWidth(size){
                 if(numClick1280 < 6){
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },600)
@@ -514,7 +631,9 @@ function carouselByWidth(size){
                     setTimeout(function(){
                         for(let i = 0; i< 8; i++){
                             sliderContainer.append(slides[pagesArray1280[5][i]]); 
-                        }   
+                            openPupup([slides[pagesArray1280[5][i]]]);
+                        }
+                            
                     },800)
                     buttonNext.classList.add('pages-end');
                     buttonEnd.classList.add('pages-end');
@@ -541,6 +660,7 @@ function carouselByWidth(size){
             if(numClick1280 > 1){ 
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },600)
@@ -548,11 +668,14 @@ function carouselByWidth(size){
                 setTimeout(function(){
                     for(let i = 0; i< 8; i++){
                         sliderContainer.append(slides[pagesArray1280[numClick1280-1][i]]); 
+                        openPupup([slides[pagesArray1280[numClick1280-1][i]]]); 
                     }   
+                    
                 },800)
             }else if(numClick1280 === 1){
                 setTimeout(function(){
                     while(sliderContainer.firstChild){
+                        deletePupup([sliderContainer.firstChild]);
                         sliderContainer.removeChild(sliderContainer.firstChild);
                     }
                 },600)
@@ -560,7 +683,9 @@ function carouselByWidth(size){
                 setTimeout(function(){
                     for(let i = 0; i< 8; i++){
                         sliderContainer.append(slides[pagesArray1280[0][i]]); 
-                    }   
+                        openPupup([slides[pagesArray1280[0][i]]]); 
+                    }  
+                     
                 },800)
                 buttonLast.classList.add('pages-end');
                 buttonFirst.classList.add('pages-end');
@@ -578,6 +703,7 @@ function carouselByWidth(size){
                 if(numClick1280 > 1){
                     setTimeout(function(){
                         while(sliderContainer.firstChild){
+                            deletePupup([sliderContainer.firstChild]);
                             sliderContainer.removeChild(sliderContainer.firstChild);
                         }
                     },600)
@@ -585,7 +711,9 @@ function carouselByWidth(size){
                     setTimeout(function(){
                         for(let i = 0; i< 8; i++){
                             sliderContainer.append(slides[pagesArray1280[0][i]]); 
+                            openPupup([slides[pagesArray1280[0][i]]]);
                         }   
+                         
                     },800)
                     buttonLast.classList.add('pages-end');
                     buttonFirst.classList.add('pages-end');
