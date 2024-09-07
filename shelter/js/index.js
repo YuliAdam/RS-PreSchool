@@ -1,51 +1,4 @@
-//Burger-menu
-
-document.querySelector('.header-burger-menu')
-.addEventListener('click',function(){
-    this.classList.toggle('active');
-    document.querySelector('.header-navigation')
-            .classList.toggle('open');
-    document.body.classList.toggle('overflow');
-    let el = document.querySelectorAll('.blackout')
-    for(let e of el){
-    e.classList.toggle('on');}
-})
-
-//Closing menu if touch out
-
-document
-.addEventListener('mouseup',function(e){
-    var div = document.querySelector('.header-navigation.open');
-    var div1 = document.querySelector('.header-burger-menu.active');
-    if (div !== e.target && !div1 .contains(e.target)){
-        div.classList.remove('open');
-        document.body.classList.toggle('overflow');
-        document.querySelector('.header-burger-menu.active')
-        .classList.remove('active');
-        let el = document.querySelectorAll('.blackout')
-        for(let e of el){
-            e.classList.remove('on');
-        }
-    }
-})
-
-function getRandomInt (min, max){
-    min = Math.ceil(min);
-    max= Math.floor(max);
-    return Math.floor(Math.random()*(max-min)+min)
-}
-
-let slides = [
-    document.querySelector('.pets-card-container').cloneNode(true),
-    document.querySelector('.pets-card-container-mind').cloneNode(true),
-    document.querySelector('.pets-card-container-last-card').cloneNode(true),
-    document.querySelector('.pets-card-container-Sophia').cloneNode(true),
-    document.querySelector('.pets-card-container-Timmy').cloneNode(true),
-    document.querySelector('.pets-card-container-Charly').cloneNode(true),
-    document.querySelector('.pets-card-container-Scarlet').cloneNode(true),
-    document.querySelector('.pets-card-container-Freddie').cloneNode(true),
-]
-
+//changh windth window
 window.addEventListener('load',() =>{
     const clientWidth = document.documentElement.clientWidth;
     carouselByWidth(clientWidth);
@@ -58,9 +11,123 @@ window.addEventListener('resize',() =>{
     console.log ('resize');
 });
 
+//Burger-menu
+
+document.querySelector('.header-burger-menu')
+.addEventListener('click',function(){
+    this.classList.toggle('active');
+    document.querySelector('.header-navigation')
+            .classList.toggle('open');
+    document.body.classList.toggle('overflow-burger');
+    let el = document.querySelectorAll('.blackout')
+    for(let e of el){
+    e.classList.toggle('on');}
+})
+
+//Closing burger menu if touch out
+
+document
+.addEventListener('mouseup',function(e){
+    var div = document.querySelector('.header-navigation.open');
+    var div1 = document.querySelector('.header-burger-menu.active');
+    if (div !== e.target && !div1.contains(e.target)){
+        div.classList.remove('open');
+        document.body.classList.remove('overflow-burger');
+        document.querySelector('.header-burger-menu.active')
+        .classList.remove('active');
+        let el = document.querySelectorAll('.blackout')
+        for(let e of el){
+            e.classList.remove('on');
+        }
+    }
+})
+
+// Const let
+
+const popupCloseButton = document.querySelectorAll('.popup-close');
+const popupOverlay = document.querySelector('.popup-overlay');
+const popupElem = [
+    document.querySelector('.popup-Katrine'),
+    document.querySelector('.popup-Jennifer'),
+    document.querySelector('.popup-Woody'),
+    document.querySelector('.popup-Sophia'),
+    document.querySelector('.popup-Timmy'),
+    document.querySelector('.popup-Charly'),  
+    document.querySelector('.popup-Scarlet'),
+    document.querySelector('.popup-Freddie'),
+];
+
+let slides = [
+    document.querySelector('.pets-card-container').cloneNode(true),
+    document.querySelector('.pets-card-container-mind').cloneNode(true),
+    document.querySelector('.pets-card-container-last-card').cloneNode(true),
+    document.querySelector('.pets-card-container-Sophia').cloneNode(true),
+    document.querySelector('.pets-card-container-Timmy').cloneNode(true),
+    document.querySelector('.pets-card-container-Charly').cloneNode(true),
+    document.querySelector('.pets-card-container-Scarlet').cloneNode(true),
+    document.querySelector('.pets-card-container-Freddie').cloneNode(true),
+]
+
+function getRandomInt (min, max){
+    min = Math.ceil(min);
+    max= Math.floor(max);
+    return Math.floor(Math.random()*(max-min)+min)
+}
+
+//Functionality Popup
+function eventPopup (num){
+    return function() {
+        popupElem[num].classList.add('on');
+        document.body.classList.add('overflow');
+        popupOverlay.classList.add('on');
+        for(let el of popupCloseButton){
+            el.classList.add('on');
+        }
+        
+    }
+}
+function openPupup (slidesNowTris){
+    for(let i=0;i< slidesNowTris.length;i++){
+        let num = 0;
+        for(let j = 0; j<slides.length; j++){
+            if(slidesNowTris[i].isEqualNode(slides[j])){
+                num = j;
+            }
+        }
+        slidesNowTris[i].addEventListener('click',eventPopup(num))
+    }
+    console.log('add');
+}
+document
+.addEventListener('mouseup',function(e){
+
+    if (!e.composedPath().some(elem => popupElem.includes(elem))
+    || e.composedPath().some(elem => elem.isEqualNode(document.querySelector('.popup-close')))){
+        for(let el of popupElem){
+            el.classList.remove('on');
+            document.body.classList.remove('overflow');
+            popupOverlay.classList.remove('on');
+            for(let el of popupCloseButton){el.classList.remove('on');}
+        } 
+    }
+})
+function deletePupup (slidesNowTris){
+    for(let i=0;i< slidesNowTris.length;i++){
+        let num = 0;
+        for(let j = 0; j<slides.length; j++){
+            if(slidesNowTris[i].isEqualNode(slides[j])){
+                num = j;
+            }
+        }
+        slidesNowTris[i].removeEventListener('click',eventPopup(num))
+    }
+    console.log('delete');
+}
+
 function carouselByWidth(size){ 
 //Width>1280
-    if(size >= 1280 ){ 
+    if(size >= 1280 ){
+        deletePupup(slides); 
     //Slide carousel
         console.log('1.'+size);
         let prev = document.querySelectorAll('.button-arrow')[0];
@@ -100,11 +167,12 @@ function carouselByWidth(size){
         ]
 
         document.querySelector('.cards').replaceChildren(...carousel);
-
         document.querySelector('.cards').scrollLeft = 1080;
+        openPupup(slidesNowTris);
         
     //Button next
         next.onclick = function(){
+            deletePupup(slidesNewPrevTris);
             for(let j =0;j<3;j++){
                 slidesNewPrevTris[j].classList.add('dont-show-slide');  
             }
@@ -113,7 +181,7 @@ function carouselByWidth(size){
                     slidesNewPrevTris[j].remove();   
                 }
                 },600)
-
+            
             setTimeout(function(){
                 slidesNewPrevTris = slidesNowTris.slice();
                 slidesNowTris = slidesNewNextTris.slice();
@@ -123,20 +191,22 @@ function carouselByWidth(size){
                     let i=getRandomInt(0,8);
                     if (!slidesNowTris[0].isEqualNode(slides[i])
                     && !slidesNowTris[1].isEqualNode(slides[i])
-                && !slidesNowTris[2].isEqualNode(slides[i])
-            && !num.includes(i)){        
-                        slidesNewNextTris.push(slides[i].cloneNode(true));
-                        num.push(i); 
-                    }
-                }
+                    && !slidesNowTris[2].isEqualNode(slides[i])
+                    && !num.includes(i)){        
+                                slidesNewNextTris.push(slides[i].cloneNode(true));
+                                num.push(i); 
+                            }
+                        }
 
-                for(let j =0;j<3;j++){
-                    document.querySelector('.cards').append(slidesNewNextTris[j]);   
+                        for(let j =0;j<3;j++){
+                            document.querySelector('.cards').append(slidesNewNextTris[j]);   
                 }
+                openPupup(slidesNowTris);
             },700)
         } 
     //Button last
         prev.onclick = function(){
+            deletePupup(slidesNewNextTris);
             for(let j =0;j<3;j++){
                 slidesNewNextTris[j].classList.add('dont-show-slide');  
             }
@@ -149,6 +219,8 @@ function carouselByWidth(size){
             setTimeout(function(){
                 slidesNewNextTris = slidesNowTris.slice();
                 slidesNowTris = slidesNewPrevTris.slice();
+                nexst = first.slice();
+                first = last.slice();
                 slidesNewPrevTris.splice(0, slidesNewNextTris.length);
                 let num = [];
                 while(slidesNewPrevTris.length < 3){ 
@@ -164,12 +236,15 @@ function carouselByWidth(size){
                 for(let j =0;j<3;j++){
                     document.querySelector('.cards').prepend(slidesNewPrevTris[j]);   
                 }
+                last = num.slice();
+                openPupup(slidesNowTris);
             },700)
         }
         
     }
 //Width>768
     if(size >= 768 && size < 1280){ 
+        deletePupup(slides);
         console.log('2.'+size);
     //Slide carousel
         let prev = document.querySelectorAll('.button-arrow')[0];
@@ -210,11 +285,11 @@ function carouselByWidth(size){
         ]
 
         document.querySelector('.cards').replaceChildren(...carousel);
-
         document.querySelector('.cards').scrollLeft = 620;
-        
+        openPupup(slidesNowTris);
     //Button next
         next.onclick = function(){
+            deletePupup(slidesNewPrevTris);
             for(let j =0;j<2;j++){
                 slidesNewPrevTris[j].classList.add('dont-show-slide');  
             }
@@ -227,6 +302,7 @@ function carouselByWidth(size){
             setTimeout(function(){
                 slidesNewPrevTris = slidesNowTris.slice();
                 slidesNowTris = slidesNewNextTris.slice();
+                openPupup(slidesNowTris);
                 slidesNewNextTris.splice(0, slidesNewNextTris.length);
                 let num =[];
                 while(slidesNewNextTris.length < 2){ 
@@ -238,7 +314,6 @@ function carouselByWidth(size){
                         num.push(i); 
                     }
                 }
-
                 for(let j =0;j<2;j++){
                     document.querySelector('.cards').append(slidesNewNextTris[j]);   
                 }
@@ -246,6 +321,7 @@ function carouselByWidth(size){
         } 
     //Button last
         prev.onclick = function(){
+            deletePupup(slidesNowTris);
             for(let j =0;j<2;j++){
                 slidesNewNextTris[j].classList.add('dont-show-slide');  
             }
@@ -258,6 +334,7 @@ function carouselByWidth(size){
             setTimeout(function(){
                 slidesNewNextTris = slidesNowTris.slice();
                 slidesNowTris = slidesNewPrevTris.slice();
+                openPupup(slidesNowTris);
                 slidesNewPrevTris.splice(0, slidesNewNextTris.length);
                 let num = [];
                 while(slidesNewPrevTris.length < 2){ 
@@ -278,6 +355,7 @@ function carouselByWidth(size){
     }
 //Width>320
     if(size < 768 ){ 
+        deletePupup(slides);
         console.log('3.'+size);
     //Slide carousel
         let prev = document.querySelectorAll('.button-arrow-320')[0];
@@ -312,11 +390,12 @@ function carouselByWidth(size){
         ]
 
         document.querySelector('.cards').replaceChildren(...carousel);
-
         document.querySelector('.cards').scrollLeft = 300;
+        openPupup([slidesNowTris]);
         
     //Button next
         next.onclick = function(){
+            deletePupup([slidesNowTris]);
             slidesNewPrevTris.classList.add('dont-show-slide');  
             setTimeout(function(){
                     slidesNewPrevTris.remove();   
@@ -325,6 +404,7 @@ function carouselByWidth(size){
             setTimeout(function(){
                 slidesNewPrevTris = slidesNowTris;
                 slidesNowTris = slidesNewNextTris;
+                openPupup([slidesNowTris]);
                 slidesNewNextTris = '';
                 console.log(slidesNewNextTris);
                 console.log(slidesNewPrevTris);
@@ -342,6 +422,7 @@ function carouselByWidth(size){
         } 
     //Button last
         prev.onclick = function(){
+            deletePupup([slidesNowTris]);
             slidesNewNextTris.classList.add('dont-show-slide');  
             setTimeout(function(){
                 slidesNewNextTris.remove();   
@@ -350,6 +431,7 @@ function carouselByWidth(size){
             setTimeout(function(){
                 slidesNewNextTris = slidesNowTris;
                 slidesNowTris = slidesNewPrevTris;
+                openPupup([slidesNowTris]);
                 slidesNewPrevTris = '';
                 while(slidesNewPrevTris === ''){ 
                     let i=getRandomInt(0,8);
@@ -364,3 +446,6 @@ function carouselByWidth(size){
         
     }
 }
+
+
+

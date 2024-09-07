@@ -17,6 +17,10 @@ body{
     min-width: 1280px;
     margin: 0;
     padding: 0;
+    overflow: auto;
+}
+.overflow{
+    overflow: hidden !important;
 }
 
 header{
@@ -280,13 +284,16 @@ main{
     justify-content:space-between;
     flex-direction:row 
 }
-.pets-card-container,
+.pets-card-container-Freddie,
 .pets-card-container-Scarlet,
 .pets-card-container-Jennifer,
-.pets-card-container-Woody
-{
+.pets-card-container-Woody,
+.pets-card-container-Katrine,
+.pets-card-container-Sophia,
+.pets-card-container-Timmy,
+.pets-card-container-Charly{
     height: 435px;
-    width: 270;
+    width: 270px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -295,11 +302,25 @@ main{
     background: #FAFAFA;
     border-radius: 9px;
     transition: all 0.5s ease-in;
+    animation: pagination 0.5s;
+    opacity: 100%;
 }
-.pets-card-container:hover,
+@keyframes pagination{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+.dont-show-slide{
+    width: 0 !important;
+}
+
+.pets-card-container-Freddie:hover,
 .pets-card-container-Scarlet:hover,
 .pets-card-container-Jennifer:hover,
-.pets-card-container-Woody:hover{
+.pets-card-container-Woody:hover,
+.pets-card-container-Katrine:hover,
+.pets-card-container-Sophia:hover,
+.pets-card-container-Timmy:hover,
+.pets-card-container-Charly:hover{
     height: 435px;
     width: 270;
     display: flex;
@@ -323,10 +344,14 @@ main{
         background: #FFFFFF;
     }
 }
-.pets-card-container:hover .button-pets-learn-more,
+.pets-card-container-Freddie:hover .button-pets-learn-more,
 .pets-card-container-Scarlet:hover .button-pets-learn-more,
 .pets-card-container-Jennifer:hover .button-pets-learn-more,
-.pets-card-container-Woody:hover .button-pets-learn-more{
+.pets-card-container-Woody:hover .button-pets-learn-more,
+.pets-card-container-Katrine:hover .button-pets-learn-more,
+.pets-card-container-Sophia:hover .button-pets-learn-more,
+.pets-card-container-Timmy:hover .button-pets-learn-more,
+.pets-card-container-Charly:hover .button-pets-learn-more{
     width: 187px;
     height: 52px;
     border: 2px solid #FDDCC4;
@@ -422,7 +447,13 @@ main{
     width: 340px;
     height: 52px;
 }
-.button-next{
+.pages-end{
+    border: 2px solid #CDCDCD !important;
+    color:  #CDCDCD !important;
+    background:#F6F6F6 !important;
+    cursor: default !important;
+}
+.button-next,.button-end,.button-last, .button-first{
     box-sizing: border-box;
     width: 52px;
     height: 52px;
@@ -439,7 +470,7 @@ main{
     letter-spacing: 0.06em;
     transition: all 0.5s ease-in;
 }
-.button-next:hover{
+.button-next:hover, .button-end:hover, .button-last:hover, .button-first:hover{
     box-sizing: border-box;
     width: 52px;
     height: 52px;
@@ -503,21 +534,149 @@ main{
     cursor: default;
     background: #F1CDB3;
 }
-.button-last{
+
+.on{
+    display: block !important;
+}
+.popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+    z-index: 0;
+    display: none;
+}
+.popup-container{
+    height: 500px;
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: top;
+    margin: auto;
+}
+
+@keyframes popup{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+.popup-Freddie,.popup-Scarlet,.popup-Charly,
+.popup-Timmy,.popup-Sophia,.popup-Katrine,
+.popup-Jennifer,.popup-Woody{
+    position: absolute;
+    top: 21.2%;
+    left: 14.8%;
+    bottom: 21.2%;
+    right: 14.8%;
+    margin: auto;
+    height: 500px;
+    width: 900px;
+    background-color:#FAFAFA;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+    opacity: 100%;
+    animation: popup 0.5s;
+    transition: all 0.5s ease-in;
+}
+
+.popup-close{
+    position: absolute;
+    top: -52px;
+    right: -44.5px;
     box-sizing: border-box;
     width: 52px;
     height: 52px;
+    border: 2px solid #F1CDB3;
     border-radius: 100px;
-    border: 2px solid #CDCDCD;
-    font-size:medium;
-    font-weight: 1000;
-    color:  #CDCDCD;
+    font-size:xx-large;
+    font-weight:400;
+    color: #292929;
+    transition: all 0.5s ease-in;
+    display: none;
+    opacity: 100%;
+    animation: popup 0.5s;
+    transition: all 0.5s ease-in;
+    background:none;
+}
+.popup-close:hover{
+    position: absolute;
+    top: -52px;
+    right: -44.5px;
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #FDDCC4;
+    border-radius: 100px;
+    font-size:xx-large;
+    font-weight: 400;
+    color: #292929;
+    background: #FDDCC4;
+    cursor: pointer;
+    animation-name: arrow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+.popup-info{
+    width: 351px;
+    height: 362px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+.popup-img{
+    width: 500px;
+    height: 500px;
+}
+.popup-name{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%; 
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.popup-breeds{
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 8.5px;
+    margin-bottom: 0;
+}
+.popup-about{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 42px;
+    margin-bottom: 42px;
+}
+.popup-list{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 102px;
+    padding-left: 10px;
+
 }
 footer{  
     background: url(../img/footer-background.png);
