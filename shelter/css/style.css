@@ -522,12 +522,6 @@ main{
     border-radius: 9px;
     margin-right: 90px;
     transition: background,width,margin-right 0.5s ease-in; 
-    animation: pagination 0.5s;
-    opacity: 100%;
-}
-@keyframes pagination{
-    from{opacity: 0%;}
-    to{opacity: 100%;}
 }
 
 .pets-card-container:hover,
@@ -686,6 +680,7 @@ main{
     display: block !important;
 }
 .popup-overlay{
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -693,7 +688,6 @@ main{
     height: 100%;
     background-color: rgba(41, 41, 41, 0.6);
     z-index: 0;
-    display: none;
 }
 .popup-container{
     height: 500px;
