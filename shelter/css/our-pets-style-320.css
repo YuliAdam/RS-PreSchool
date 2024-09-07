@@ -379,7 +379,7 @@ main{
     opacity: 100%;
 }
 @keyframes pagination{
-    from{opacity: 0%;}
+    from{opacity: 50%;}
     to{opacity: 100%;}
 }
 .pets-card-container-Freddie:hover,
