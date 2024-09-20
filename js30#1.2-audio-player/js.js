@@ -10,13 +10,26 @@ console.log(audio);
 const singer = document.querySelectorAll('.singer');
 const song = document.querySelectorAll('.song');
 let durationAudio = document.querySelector('.max-time'); 
+let nowTime = document.querySelector('.start-time');
+
+const songTimeing = document.querySelector('.song-timeing');
+const threadPosition = document.querySelector('.thread-position');
+let box = songTimeing.getBoundingClientRect();
+let xInit = box.left + window.pageXOffset;
+let xFinal = box.right + window.pageXOffset; 
+let xDuration = xFinal - xInit;
+
+let currentTime = 0;
 
 function playAudio(i) {
-  audio[i].currentTime = 0;
+  audio[i].currentTime = currentTime;
   audio[i].play();
 }
 
+
+
 function addTreckProperty(i){
+  currentTime = 0;
   backgroundImg[i].classList.add('show-background-img');
   treckImg[i].classList.add('show-treck-img');
   singer[i].classList.add('show-singer');
@@ -86,7 +99,7 @@ prevBtn.addEventListener('click', function(){
   if(pauseBtn.classList.contains('dont-show')){
     play();
   }
-
+  threadPosition.style.left = '0px';
   pauseAudio(i);
   removeTreckProperty(i);
 
@@ -104,7 +117,7 @@ prevBtn.addEventListener('click', function(){
 //Next audio
 nextBtn.addEventListener('click', function(){
   console.log(i);
-
+  threadPosition.style.left = '0px';
   if(pauseBtn.classList.contains('dont-show')){
     play();
   }
@@ -121,4 +134,32 @@ nextBtn.addEventListener('click', function(){
   playAudio(i);
   isPlay = true;
   duration(i);
+})
+
+
+function changeCurrentTime(i, x) {
+  audio[i].currentTime = audio[i].duration/xDuration *(x-xInit);
+  currentTime = audio[i].currentTime;
+  console.log( audio[i].currentTime + 'dur ' + audio[i].duration);
+  audio[i].play();
+  threadPosition.style.left = (x - xInit) + 'px';
+  changeStartTime(audio[i].currentTime);
+  console.log('left' + threadPosition.left);
+} 
+
+function changeStartTime(time){
+  let sec = Math.floor(time%60);
+  if(sec<10) sec = '0' + sec;
+  nowTime.innerHTML = Math.floor(time/60) + ':'+ sec;
+} 
+
+songTimeing.addEventListener('click', function(event){
+  console.log(i);
+
+  if(pauseBtn.classList.contains('dont-show')){
+    play();
+  }               
+  console.log(event.clientX);                    
+  changeCurrentTime(i, event.clientX);
+  isPlay = true;
 })
