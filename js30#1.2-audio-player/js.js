@@ -12,9 +12,9 @@ const song = document.querySelectorAll('.song');
 let durationAudio = document.querySelector('.max-time'); 
 let nowTime = document.querySelector('.start-time');
 
-const songTimeing = document.querySelector('.song-timeing');
+const songThread = document.querySelector('.song-thread');
 const threadPosition = document.querySelector('.thread-position');
-let box = songTimeing.getBoundingClientRect();
+let box = songThread.getBoundingClientRect();
 let xInit = box.left + window.pageXOffset;
 let xFinal = box.right + window.pageXOffset; 
 let xDuration = xFinal - xInit;
@@ -153,7 +153,7 @@ function changeStartTime(time){
   nowTime.innerHTML = Math.floor(time/60) + ':'+ sec;
 } 
 
-songTimeing.addEventListener('click', function(event){
+songThread.addEventListener('click', function(event){
   console.log(i);
 
   if(pauseBtn.classList.contains('dont-show')){
