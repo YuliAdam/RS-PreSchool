@@ -41,6 +41,8 @@ main{
     justify-content: flex-start;
     max-width: 320px;
     max-height: 400px;
+    min-width: 284.8px;
+    min-height: 356px;
     width: 40vw;
     height: 50vw;
     position: fixed;
@@ -56,9 +58,20 @@ main{
 .treck-img{
     position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     height: auto;
     opacity: 0;
+    transition: all 1s;
+}
+.play{
+    width: 110% !important;  
+    left: -5%;
+    right: -5%;
+    top:-5% !important;
+    bottom: -5%;
 }
 .show-treck-img{
    opacity: 100 !important;
@@ -82,6 +95,7 @@ main{
     margin-top: 5%;
     margin-bottom: 0;
 }
+
 .play-pause-btn{
     width: 3em;
     height: 3em; 
@@ -89,11 +103,11 @@ main{
     margin-left: 5px;
     margin-right: 5px;
 }
-.play-btn{
+.play-btn, .pause-btn{
     width: 100%;
     height: auto;
     fill: white;
-    transition: all 1s;
+    transition: fill 1s;
 }
 .play-btn:hover, .pause-btn:hover,
 .next-btn svg:hover,.prev-btn svg:hover{
@@ -101,11 +115,9 @@ main{
     height: auto;
     fill: rgb(174, 255, 0);
 }
-.pause-btn{
-    width: 0%;
-    height: auto;
-    fill: white;
-    transition: all 1s;
+.dont-show{
+    display: none;
+    width: 0% !important;
 }
 .treck-info{
     display: flex;
@@ -114,7 +126,7 @@ main{
     align-items:flex-start;
     margin-left: 5px;
     margin-right: 5px;
-    z-index: 1;
+    width: 50%;
 }
 .treck-info div {
     margin-top: 2px;
