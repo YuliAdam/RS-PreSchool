@@ -1,0 +1,234 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    margin-top:0;
+    margin-left: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.treck-background-img{
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 1s;
+}
+.show-background-img{
+    opacity: 100 !important;
+}
+footer{
+    width: 100vw;
+    text-align: center;
+    position: fixed;
+    bottom: 1vh;
+}
+#logo{
+    width: 5%;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    justify-content: flex-start;
+    max-width: 320px;
+    max-height: 400px;
+    min-width: 284.8px;
+    min-height: 356px;
+    width: 40vw;
+    height: 50vw;
+    position: fixed;
+    top: 10vh;
+    bottom: 10vh;
+    left: 10vw;
+    right: 10vw;
+    margin: auto;
+    border-radius: 5%;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+    overflow: hidden;
+}
+.treck-img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: all 1s;
+}
+.play{
+    width: 110% !important;  
+    left: -5%;
+    right: -5%;
+    top:-5% !important;
+    bottom: -5%;
+}
+.show-treck-img{
+   opacity: 100 !important;
+}
+.audio-controller{
+    width: 100%;
+    height: 30%;
+    background-color: rgb(128, 128, 128);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.controller{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+.play-pause-btn{
+    width: 3em;
+    height: 3em; 
+    z-index: 50;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.play-btn, .pause-btn{
+    width: 100%;
+    height: auto;
+    fill: white;
+    transition: fill 1s;
+}
+.play-btn:hover, .pause-btn:hover,
+.next-btn svg:hover,.prev-btn svg:hover{
+    width: 100%;
+    height: auto;
+    fill: rgb(174, 255, 0);
+    cursor: pointer;
+}
+.dont-show{
+    display: none;
+    width: 0% !important;
+}
+.treck-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50%;
+}
+.treck-info div {
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+.singer{
+    color: rgb(174, 255, 0);
+    font-size: 0px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 0;
+}
+.song{
+    color: rgb(255, 255, 255);
+    font-size: 0px;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+.show-song{
+    font-size: small !important;
+}
+.show-singer{
+    font-size: large !important;
+}
+.prev-next-btn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.prev-btn{
+    width: 1.5em;
+    height: 1.5em;  
+}
+.next-btn{
+    width: 1.5em;
+    height: 1.5em;  
+}
+.prev-btn svg{
+    width: 100%;
+    height: auto; 
+    fill: white; 
+    transition: all 1s;
+}
+.next-btn svg{
+    width: 100%;
+    height: auto; 
+    fill: white;  
+    transition: all 1s;
+}
+.song-timeing{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.max-time{
+    font-size: small;
+    margin: 0;
+    color: rgb(174, 255, 0);
+    text-align: right;
+    margin-left: 90%;
+    margin-bottom: 5px;
+}
+.start-time{
+    font-size: small;
+    margin: 0;
+    color: white;
+    margin-top: 5px;
+}
+.song-thread{
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 10%;
+    transition: all 1s;
+}
+.song-thread:hover{
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 10%;
+    cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+}
+.thread-position{
+    position: absolute;
+    width: 4%;
+    height: 10px;
+    background-color: rgb(174, 255, 0);
+    border-radius: 50%;
+    top: -2.5px;
+    left: 0;
+}
