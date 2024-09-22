@@ -141,8 +141,11 @@ prevBtn.addEventListener('click', function(){
     play();
   }
   threadPosition.style.left = '0px';
-  pauseAudio(i);
-  removeTreckProperty(i);
+  
+  for(let e = 0; e<audio.length;e+=1){
+    pauseAudio(e);
+    removeTreckProperty(e);
+  }
 
   if (i>0){ 
     i = i-1;
@@ -165,8 +168,10 @@ nextBtn.addEventListener('click', function(){
     play();
   }
 
-  pauseAudio(i);
-  removeTreckProperty(i);
+  for(let e = 0; e<audio.length;e+=1){
+    pauseAudio(e);
+    removeTreckProperty(e);
+  }
 
   if (i < audio.length-1){ 
     i = i+1;
