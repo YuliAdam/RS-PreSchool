@@ -55,6 +55,127 @@ main{
     box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
     overflow: hidden;
 }
+.burger-menu{
+    width: 6%;
+    height: 4.5%;
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: all 0.3s ease 0s;
+    z-index: 50;
+}
+
+.burger-line{
+    width: 100%;
+    background-color: rgb(174, 255, 0);
+    height: 2px;
+    padding: none;
+    margin: 0;
+}
+
+.active {
+    transform: rotate(90deg) ;
+    z-index: 100;
+    position: absolute;
+    right: 3%;
+    top: 3%;
+}
+
+.open {
+    z-index: 100 !important;
+    opacity: 100 !important;
+    max-width: 320px;
+    max-height: 400px;
+    min-width: 284.8px;
+    min-height: 356px;
+    width: 40vw !important;
+    height: 50vw !important;
+    transition: all 0.5s ease-in;
+}
+
+
+.song-navigation{
+    max-width: 320px;
+    max-height: 400px;
+    min-width: 284.8px;
+    min-height: 356px;
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    justify-content: flex-start;
+    background: rgb(128, 128, 128);
+    animation: burger 0.5s;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    position: fixed;
+    width: 40vw;
+    height: 50vw;
+    top: 10vh;
+    bottom: 10vh;
+    left: 10vw;
+    right: 10vw;
+    margin: auto;
+    border-radius: 5%;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+    overflow: hidden;
+    z-index: 0;
+}
+
+@keyframes burger{
+    from{
+    z-index: 0;
+    opacity: 0;}
+    to{
+    z-index: 100;
+    opacity: 100;}
+}
+.song-list{
+    display: flex;
+    align-items: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0;
+    padding: 0;
+    margin-left: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+    animation: list-animation 0.5s;
+    
+}
+@keyframes list-animation{
+    from{opacity: 0;}
+    50% {opacity: 0;}
+    to{opacity: 1;}
+}
+.song-item{
+    align-items: left;
+    list-style-type: none;
+}
+.singer-song-item{
+    color: rgb(255, 255, 255);
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;  
+    text-decoration: none;
+    transition: all 0.5s ease-in;
+}
+.song-item:hover .singer-song-item{
+    color: rgb(174, 255, 0);
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;  
+    text-decoration: none;
+    transition: all 0.5s ease-in;
+}
+
+.this{
+    color: rgb(174, 255, 0);
+}
+
 .treck-img{
     position: absolute;
     top: 0;
@@ -231,4 +352,5 @@ main{
     border-radius: 50%;
     top: -2.5px;
     left: 0;
+    transition: all 1s;
 }
