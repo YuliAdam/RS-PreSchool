@@ -30,7 +30,7 @@ let currentTime = 0;
       if(isPlay && audio[i].currentTime !== audio[i].duration){
         currentTime = currentTime + 1;
         console.log(currentTime);
-        changeStartTime(currentTime); 
+        changeStartTime(audio[i].currentTime); 
         threadPosition.style.left = xDuration/audio[i].duration *(currentTime) + 'px';
       }else{
         clearInterval(intervalId);
@@ -56,7 +56,7 @@ function pauseAudio(i) {
     if(isPlay && audio[i].currentTime){
       currentTime = currentTime + 1;
       console.log(currentTime);
-      changeStartTime(currentTime); 
+      changeStartTime(audio[i].currentTime); 
       threadPosition.style.left = xDuration/audio[i].duration *(currentTime) + 'px';
     }else{
       clearInterval(intervalId);
@@ -138,6 +138,7 @@ playPauseBtn.addEventListener('click', function(){
 //Prev audio
 prevBtn.addEventListener('click', function(){
   console.log(i);
+  isPlay=false;
   if(pauseBtn.classList.contains('dont-show')){
     play();
   }
@@ -150,7 +151,6 @@ prevBtn.addEventListener('click', function(){
   }else{
     i = song.length-1;
   }
-  isPlay=false;
   addTreckProperty(i);
   playAudio(i);
   duration(i);
@@ -166,7 +166,7 @@ nextBtn.addEventListener('click', function(){
   if(pauseBtn.classList.contains('dont-show')){
     play();
   }
-
+currentTime = currentTime-1;
   pauseAudio(i);
   removeTreckProperty(i);
   isPlay=false;
@@ -179,7 +179,7 @@ nextBtn.addEventListener('click', function(){
   playAudio(i);
   setTimeout(()=>{  
     isPlay = true;
-  },500);
+  },700);
   duration(i);
 })
 
