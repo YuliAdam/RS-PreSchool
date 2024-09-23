@@ -51,6 +51,7 @@ function addTreckProperty(i){
 
 function pauseAudio(i) {
   audio[i].pause();
+  isPlay=false;
   let intervalId = setInterval(function(){
     if(isPlay && audio[i].currentTime){
       currentTime = currentTime + 1;
@@ -141,23 +142,21 @@ prevBtn.addEventListener('click', function(){
     play();
   }
   threadPosition.style.left = '0px';
+  pauseAudio(i);
+  removeTreckProperty(i);
   
-  for(let e = 0; e<audio.length;e+=1){
-    pauseAudio(e);
-    removeTreckProperty(e);
-  }
-
   if (i>0){ 
     i = i-1;
   }else{
     i = song.length-1;
   }
+  isPlay=false;
   addTreckProperty(i);
   playAudio(i);
   duration(i);
   setTimeout(()=>{  
     isPlay = true;
-  },300);
+  },500);
 })
 
 //Next audio
@@ -168,11 +167,9 @@ nextBtn.addEventListener('click', function(){
     play();
   }
 
-  for(let e = 0; e<audio.length;e+=1){
-    pauseAudio(e);
-    removeTreckProperty(e);
-  }
-
+  pauseAudio(i);
+  removeTreckProperty(i);
+  isPlay=false;
   if (i < audio.length-1){ 
     i = i+1;
   }else{
@@ -182,7 +179,7 @@ nextBtn.addEventListener('click', function(){
   playAudio(i);
   setTimeout(()=>{  
     isPlay = true;
-  },300);
+  },500);
   duration(i);
 })
 
