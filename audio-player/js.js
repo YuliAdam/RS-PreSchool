@@ -31,12 +31,10 @@ let currentTime = 0;
         currentTime = currentTime + 1;
         console.log(currentTime);
         changeStartTime(audio[i].currentTime); 
-        threadPosition.style.left = xDuration/audio[i].duration *(currentTime) + 'px';
+        threadPosition.style.left = xDuration/audio[i].duration *(audio[i].currentTime) + 'px';
       }else{
         clearInterval(intervalId);
-        currentTime = currentTime - 1;
-        threadPosition.style.left = xDuration/audio[i].duration *(currentTime) + 'px';
-        }
+      }
     }, 1000);
   }
 
@@ -57,7 +55,7 @@ function pauseAudio(i) {
       currentTime = currentTime + 1;
       console.log(currentTime);
       changeStartTime(audio[i].currentTime); 
-      threadPosition.style.left = xDuration/audio[i].duration *(currentTime) + 'px';
+      threadPosition.style.left = xDuration/audio[i].duration *(audio[i].currentTime) + 'px';
     }else{
       clearInterval(intervalId);
       }
