@@ -63,7 +63,7 @@ function search(e){
     }
 }
 
-searchForm.addEventListener('input', debounce( search, 250 ));
+searchForm.addEventListener('input', debounce( search, 1000 ));
 
 searchButton.addEventListener('click',function(e){
   foto.innerHTML ='';
@@ -76,6 +76,22 @@ searchButton.addEventListener('click',function(e){
       url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=0f15ff623f1198a1f7f52550f8c36057&tags=" + param + "&tag_mode=all&extras=url_m&format=json&nojsoncallback=1";
       getDataBySearchForm();
     }
+})
+
+input.addEventListener('keyup',function(e){
+  if(e.code === 'Enter'){
+    foto.innerHTML ='';
+    let param = input.value;
+    console.log(param);
+    if(param === '' || param === undefined || param === null){
+      url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=TxW-6LZiqfRGOumLYD-4032W0-40vkNOV1vpo7Aw5zM";
+      getData();
+    }else {
+      url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=0f15ff623f1198a1f7f52550f8c36057&tags=" + param + "&tag_mode=all&extras=url_m&format=json&nojsoncallback=1";
+      getDataBySearchForm();
+    }
+  }
+  
 })
 
 async function getDataBySearchForm() {
