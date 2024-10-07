@@ -1,0 +1,23 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    margin-top:0;
+    margin-left: 0;
+    position: relative;
+    overflow: hidden;
+}
+footer{
+    width: 100vw;
+    text-align: center;
+    position: fixed;
+    bottom: 1vh;
+}
+#logo{
+    width: 5%;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+}
