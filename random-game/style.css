@@ -1,0 +1,289 @@
+html{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    margin-top:0;
+    margin-left: 0;
+    position: relative;
+    overflow: hidden;
+    background-image: url(img/pixel-minecraft-style-land-background-vector.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    overflow: hidden;
+}
+footer{
+    width: 100vw;
+    text-align: center;
+    position: fixed;
+    bottom: 1vh;
+}
+#logo{
+    width: 5%;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.game{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 30%;
+    background-image: url(img/9877673-pixel-art-sfondo-cielo-con-nuvole-nuvoloso-cielo-blu-vettore-per-gioco-8bit-su-sfondo-bianco-vettoriale.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.game-time{
+    width: 6vw;
+    height: 4vw;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2vw;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    z-index: 70;
+}
+
+.dino{
+    position: absolute;
+    bottom: 0;
+    left: 3.5vw;
+}
+.dino img{
+    width: 8vw;
+    height: auto;
+    max-height: 20vh;
+}
+.jump{
+    animation: jump 0.7s linear;
+}
+@keyframes jump{
+    0%{
+        bottom:0;}
+    25%{
+        bottom: 6vw;}
+    50%{
+        bottom: 12vw;
+    }
+    75%{
+        bottom: 6vw;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+.cactus{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation-duration:3s;
+}
+.cactus img{
+    width: 7vw;
+    height: auto;
+    max-height: 20vh;
+}
+.run{
+    animation: run 3s infinite linear;
+}
+@keyframes run{
+    0%{
+        right: 0;}
+    100%{
+        right: 100vw;
+    }
+}
+.take-money{
+    display: none !important;
+}
+.money{
+    position: absolute;
+    bottom: 12vw;
+    right: -50%;
+}
+.money img{
+    width: 3vw;
+    height: auto;
+    max-height: 9vh;
+}
+.run-money{
+    animation: money 4.5s infinite linear;
+}
+@keyframes money{
+    0%{
+        right: -50%;
+    }
+    50%{
+         right: 25%;
+    } 
+    100%{
+        right: 100%;
+    }
+
+}
+.money1{
+    position: absolute;
+    bottom: 12vw;
+    right: -25%;
+}
+.money1 img{
+    width: 3vw;
+    height: auto;
+    max-height: 9vh;
+}
+.run-money1{
+    animation: money1 4.5s infinite linear;
+}
+@keyframes money1{
+    0%{
+        right: -25%;
+    }
+    50%{
+         right: 50%;
+    } 
+    100%{
+        right: 125%;
+    }
+
+}
+.play{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    
+}
+.play input{
+    width: 30vw;
+    height: 4vw;
+    max-height: 80px;
+    max-width: 600px;
+    min-width: 228px;
+    min-height: 30.4px;
+    margin-bottom: 30px;
+    border-radius: 10%;
+    border: 5px solid green;
+    color: blue;
+    font-size: 3vw;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    box-shadow: 0px 2px 35px 14px rgba(0, 128, 0, 0.5);
+}
+.play input:focus{
+    outline: none;
+}
+
+.play-button{
+    width: 20vw;
+    max-width: 400px;
+    min-width: 152px;
+    height: auto;
+    border-radius: 20%;
+}
+.play-button:hover{
+    width: 20vw;
+    max-width: 400px;
+    min-width: 152px;
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+}
+.level{
+    display: flex;
+    width: 70%;
+    min-width: 260px;
+    max-width: 1050px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.level1,.level2,.level3{
+    width: 20vw;
+    max-width: 300px;
+    min-width: 80px;
+    height: auto;
+    border-radius: 30%;
+    border: 3px solid transparent;
+}
+.level1:hover,.level2:hover,.level3:hover{
+    width: 20vw;
+    max-width: 300px;
+    min-width: 80px;
+    height: auto;
+    border-radius: 30%;
+    border: 3px solid black;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+}
+
+.level-activ{
+    border: 3px solid black !important;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8) !important;
+}
+
+.game-over{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    opacity: 0%;
+    display: none;
+}
+.game-over-p{
+    width: 40vw;
+    min-width: 228px;
+    max-width: 600px;
+    max-height: 150px;
+    min-height: 57px;
+    height: 10vw;
+    background-image: url("img/png/game_over_PNG58.png");
+    background-size: cover;
+    background-position: center;
+}
+.play-again{
+    min-width: 152px;
+    max-width: 400px;
+    width: 20vw;
+    margin-top: 40px;
+
+}
+.over{
+    opacity: 100% !important;
+    display: flex !important;  
+}
+
+table{
+    width : 50%;
+    min-width: 272px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5%;
+    overflow: hidden;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 2vw;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 5px;
+    color: white;
+}
+th {
+    color: red;
+    font-size: 3vw;
+}
+
