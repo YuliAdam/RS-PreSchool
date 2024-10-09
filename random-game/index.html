@@ -11,11 +11,17 @@
 </head>
 <body>
     <div class="play">
-        <input class="gamer" type="text" value="" placeholder="Nickname...">
-        <img class="play-button" src="img/png/png-transparent-push-button-pixel-art-button-text-logo-fork.png">
+        <input class="gamer" type="text" value="" placeholder="Nickname..." maxlength="25" autocomplete="off" autofocus="form">
+        <img class="play-button" src="img/png/png-transparent-push-button-pixel-art-button-text-logo-fork.png" alt="play button">
+        <div class="level">
+            <img class="level1" src="img/png/80a9347e-ef77-43ad-903a-d897c0d10a26.jpg" alt="level 1">
+            <img class="level2" src="img/png/17733001-920f-42ba-8567-dac2b1f1dc2c.jpg" alt="level 2">
+            <img class="level3" src="img/png/e722a758-05a3-453b-ae7e-be04042a7d9e.jpg" alt="level 3">
+        </div>
     </div>
 
     <div class="game-over">
+        <div class="game-over-p"></div>
         <table class="table">
             <thead>
             <tr>
@@ -26,6 +32,7 @@
             <tbody class = "table-rows">
             </tbody>
         </table>
+        <img class="play-again" src="img/png/play-again.png" alt="play-again">
     </div>
 
     <p class="game-time">3:00</p>

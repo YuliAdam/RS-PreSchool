@@ -82,6 +82,7 @@ footer a {
     position: absolute;
     bottom: 0;
     right: 0;
+    animation-duration:3s;
 }
 .cactus img{
     width: 7vw;
@@ -97,6 +98,9 @@ footer a {
     100%{
         right: 100vw;
     }
+}
+.take-money{
+    display: none !important;
 }
 .money{
     position: absolute;
@@ -174,18 +178,62 @@ footer a {
     font-size: 3vw;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    box-shadow: 0px 2px 35px 14px rgba(0, 128, 0, 0.5);
 }
-.play img{
+.play input:focus{
+    outline: none;
+}
+
+.play-button{
     width: 20vw;
     max-width: 400px;
     min-width: 152px;
     height: auto;
     border-radius: 20%;
 }
+.play-button:hover{
+    width: 20vw;
+    max-width: 400px;
+    min-width: 152px;
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+}
+.level{
+    display: flex;
+    width: 70%;
+    min-width: 260px;
+    max-width: 1050px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.level1,.level2,.level3{
+    width: 20vw;
+    max-width: 300px;
+    min-width: 80px;
+    height: auto;
+    border-radius: 30%;
+    border: 3px solid transparent;
+}
+.level1:hover,.level2:hover,.level3:hover{
+    width: 20vw;
+    max-width: 300px;
+    min-width: 80px;
+    height: auto;
+    border-radius: 30%;
+    border: 3px solid black;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+}
+
+.level-activ{
+    border: 3px solid black !important;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8) !important;
+}
 
 .game-over{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -195,7 +243,24 @@ footer a {
     opacity: 0%;
     display: none;
 }
+.game-over-p{
+    width: 40vw;
+    min-width: 228px;
+    max-width: 600px;
+    max-height: 150px;
+    min-height: 57px;
+    height: 10vw;
+    background-image: url("img/png/game_over_PNG58.png");
+    background-size: cover;
+    background-position: center;
+}
+.play-again{
+    min-width: 152px;
+    max-width: 400px;
+    width: 20vw;
+    margin-top: 40px;
 
+}
 .over{
     opacity: 100% !important;
     display: flex !important;  
@@ -203,6 +268,7 @@ footer a {
 
 table{
     width : 50%;
+    min-width: 272px;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 5%;
     overflow: hidden;
