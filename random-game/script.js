@@ -9,21 +9,25 @@ const play = document.querySelector('.play-button');
 const gamer = document.querySelector('.gamer');
 let gamerList = [];
 let gamerTimeList = [];
-let audio = document.querySelector('.treck');
+const audio = document.querySelector('.treck');
+const songMoney = document.querySelector('.song-money');
 let gameTime = document.querySelector('.game-time');
-let gameOver = document.querySelector('.game-over');
+const gameOver = document.querySelector('.game-over');
 let tableRows = document.querySelector('.table-rows');
-let playAgain = document.querySelector('.play-again');
-let level = document.querySelector('.level').children;
+const playAgain = document.querySelector('.play-again');
+const level = document.querySelector('.level').children;
 const speedCactus = ['4s', '3s', '2s'];
+const speedJump = ['0.9s', '0.7s', '0.5s'];
 let timeMax = 10;
+const volumeOn = document.querySelector('.volumeOn');
+const volumeOff = document.querySelector('.volumeOff');
 
 //Init game
 
 function playAudio() {
     audio.currentTime = 0;
     audio.play();
-  }
+}
 
 function playGame() {
     timeMax = 10;
@@ -42,20 +46,27 @@ play.addEventListener('click',function(){
 })
 
 //Event jump Dino
-
 function jampDino(e){
     console.log(e.key);
-    if(e.key === 'ArrowUp' && document.querySelector('.play').style.display === "none"){
+    if(window.screen.availWidth>768){
+        if(e.key === 'ArrowUp' && document.querySelector('.play').style.display === "none"){
+            dino.classList.add('jump');
+            setTimeout(function(){
+                dino.classList.remove('jump');
+            },700)    
+        }
+    }else{
         dino.classList.add('jump');
-        setTimeout(function(){
-            dino.classList.remove('jump');
-        },700)    
-    }
+            setTimeout(function(){
+                dino.classList.remove('jump');
+            },700)    
+    }   
 }
 
-window.addEventListener('keydown',function(e){
-    jampDino(e);
-})
+    window.addEventListener('keydown',function(e){
+        jampDino(e);
+    })
+
 
 //Change game time
 
@@ -139,11 +150,32 @@ for(let i =0; i< level.length;i++){
     level[i].addEventListener('click',function(){
         for(let el of level) el.classList.remove('level-activ');
         cactus.style['animation-duration'] = speedCactus[i];
+        dino.style['animation-duration'] = speedJump[i];
         level[i].classList.add('level-activ');
     })
 }
 
+//Change volume
+volumeOn.classList.add('onOffVolume');
+
+volumeOn.addEventListener('click',function(){
+    audio.volume = 0.0;
+    volumeOn.classList.remove('onOffVolume');
+    volumeOff.classList.add('onOffVolume');
+})
+
+volumeOff.addEventListener('click',function(){
+    audio.volume = 1.0;
+    volumeOff.classList.remove('onOffVolume');
+    volumeOn.classList.add('onOffVolume');
+})
+
 // Take money
+
+function playAudioMoney() {
+    songMoney.currentTime = 0;
+    songMoney.play();
+}
 
 let takeMoney = setInterval(function(){
     let dinoBottom = parseInt(window.getComputedStyle(dino).getPropertyValue('bottom'));
@@ -153,6 +185,7 @@ let takeMoney = setInterval(function(){
     let moneyLeft = parseInt(window.getComputedStyle(money).getPropertyValue('left'));
     if(moneyRight > dinoRight && moneyLeft > dinoLeft 
         && dinoBottom >= parseInt(window.getComputedStyle(money).getPropertyValue('bottom'))*0.25){
+        playAudioMoney();
         money.classList.add('take-money');
         timeMax = timeMax + 5;
         setTimeout(function(){
@@ -163,6 +196,7 @@ let takeMoney = setInterval(function(){
     let money1Left = parseInt(window.getComputedStyle(money1).getPropertyValue('left'));
     if(money1Right > dinoRight && money1Left > dinoLeft 
         && dinoBottom >= parseInt(window.getComputedStyle(money1).getPropertyValue('bottom'))*0.25){
+        playAudioMoney();
         money1.classList.add('take-money');
         timeMax = timeMax + 5;
         setTimeout(function(){
@@ -179,6 +213,8 @@ let takeMoney = setInterval(function(){
         money1.classList.remove('run-money1');
     }
 },10);
+
+// For phone
 
 
 
