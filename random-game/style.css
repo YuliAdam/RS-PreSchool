@@ -348,7 +348,7 @@ th {
     display: none;
 }
 
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 1280px) {
     .arrow-up{
         position: absolute;
         bottom: -10vw;
