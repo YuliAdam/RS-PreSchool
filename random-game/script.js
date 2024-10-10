@@ -48,24 +48,32 @@ play.addEventListener('click',function(){
 //Event jump Dino
 function jampDino(e){
     console.log(e.key);
-    if(window.screen.availWidth>768){
-        if(e.key === 'ArrowUp' && document.querySelector('.play').style.display === "none"){
-            dino.classList.add('jump');
-            setTimeout(function(){
-                dino.classList.remove('jump');
-            },700)    
-        }
-    }else{
+    if(e.key === 'ArrowUp' && document.querySelector('.play').style.display === "none"){
         dino.classList.add('jump');
-            setTimeout(function(){
-                dino.classList.remove('jump');
-            },700)    
-    }   
+        setTimeout(function(){
+            dino.classList.remove('jump');
+        },700)    
+    }
 }
 
+function jampDinoPhone(){
+    if(document.querySelector('.play').style.display === "none"){
+        dino.classList.add('jump');
+        setTimeout(function(){
+            dino.classList.remove('jump');
+        },700) 
+    }
+}
+
+if(window.screen.availWidth>768){
     window.addEventListener('keydown',function(e){
         jampDino(e);
     })
+}else{
+    window.addEventListener('click',function(e){
+        jampDinoPhone();
+    })
+}   
 
 
 //Change game time
