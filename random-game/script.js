@@ -21,6 +21,7 @@ const speedJump = ['0.9s', '0.7s', '0.5s'];
 let timeMax = 10;
 const volumeOn = document.querySelector('.volumeOn');
 const volumeOff = document.querySelector('.volumeOff');
+const arrowUp = document.querySelector('.arrow-up');
 
 //Init game
 
@@ -56,24 +57,24 @@ function jampDino(e){
     }
 }
 
+window.addEventListener('keydown',function(e){
+    jampDino(e);
+})
+
+//Event jump for phone
+
 function jampDinoPhone(){
     if(document.querySelector('.play').style.display === "none"){
         dino.classList.add('jump');
         setTimeout(function(){
             dino.classList.remove('jump');
-        },700) 
+        },700)    
     }
 }
 
-if(window.screen.availWidth>768){
-    window.addEventListener('keydown',function(e){
-        jampDino(e);
-    })
-}else{
-    window.addEventListener('click',function(e){
-        jampDinoPhone();
-    })
-}   
+arrowUp.addEventListener('click',function(){
+    jampDinoPhone();
+})
 
 
 //Change game time
