@@ -46,20 +46,27 @@ play.addEventListener('click',function(){
 })
 
 //Event jump Dino
-
 function jampDino(e){
     console.log(e.key);
-    if(e.key === 'ArrowUp' && document.querySelector('.play').style.display === "none"){
+    if(window.screen.availWidth>768){
+        if(e.key === 'ArrowUp' && document.querySelector('.play').style.display === "none"){
+            dino.classList.add('jump');
+            setTimeout(function(){
+                dino.classList.remove('jump');
+            },700)    
+        }
+    }else{
         dino.classList.add('jump');
-        setTimeout(function(){
-            dino.classList.remove('jump');
-        },700)    
-    }
+            setTimeout(function(){
+                dino.classList.remove('jump');
+            },700)    
+    }   
 }
 
-window.addEventListener('keydown',function(e){
-    jampDino(e);
-})
+    window.addEventListener('keydown',function(e){
+        jampDino(e);
+    })
+
 
 //Change game time
 
@@ -206,6 +213,8 @@ let takeMoney = setInterval(function(){
         money1.classList.remove('run-money1');
     }
 },10);
+
+// For phone
 
 
 
