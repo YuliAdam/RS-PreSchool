@@ -49,11 +49,44 @@ footer a {
     color: black;
     z-index: 70;
 }
+.volumeOn{
+    width: 4vw;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 70;
+    display: none;
+}
+.volumeOn:hover,.volumeOff:hover{
+    width: 4vw;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 70;
+    cursor: pointer;
+}
+
+.volumeOff{
+    width: 4vw;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 70;
+    display: none;
+}
+
+.onOffVolume{
+    display: block !important;
+}
 
 .dino{
     position: absolute;
     bottom: 0;
     left: 3.5vw;
+    animation-duration:0.7s;
 }
 .dino img{
     width: 8vw;
@@ -190,6 +223,7 @@ footer a {
     min-width: 152px;
     height: auto;
     border-radius: 20%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .play-button:hover{
     width: 20vw;
@@ -198,6 +232,7 @@ footer a {
     height: auto;
     border-radius: 20%;
     box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+    cursor: pointer;
 }
 .level{
     display: flex;
@@ -214,6 +249,7 @@ footer a {
     height: auto;
     border-radius: 30%;
     border: 3px solid transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .level1:hover,.level2:hover,.level3:hover{
     width: 20vw;
@@ -223,11 +259,13 @@ footer a {
     border-radius: 30%;
     border: 3px solid black;
     box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+    cursor: pointer;
 }
 
 .level-activ{
     border: 3px solid black !important;
     box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8) !important;
+    cursor: auto !important;
 }
 
 .game-over{
@@ -258,9 +296,28 @@ footer a {
     min-width: 152px;
     max-width: 400px;
     width: 20vw;
-    margin-top: 40px;
-
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+.play-again:hover{
+    min-width: 152px;
+    max-width: 400px;
+    width: 20vw;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+    cursor: pointer;
+}
+.play-again-div{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.play-again-div:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
+    border-radius: 35%;
+}
+
 .over{
     opacity: 100% !important;
     display: flex !important;  
