@@ -22,9 +22,10 @@ let timeMax = 10;
 const volumeOn = document.querySelector('.volumeOn');
 const volumeOff = document.querySelector('.volumeOff');
 const arrowUp = document.querySelector('.arrow-up');
+let animationDuration = 1;
+let gamerResult = {};
 
 //Init game
-
 function playAudio() {
     audio.currentTime = 0;
     audio.play();
@@ -53,7 +54,7 @@ function jampDino(e){
         dino.classList.add('jump');
         setTimeout(function(){
             dino.classList.remove('jump');
-        },700)    
+        },speedJump[animationDuration][2]*100)    
     }
 }
 
@@ -68,7 +69,7 @@ function jampDinoPhone(){
         dino.classList.add('jump');
         setTimeout(function(){
             dino.classList.remove('jump');
-        },700)    
+        },speedJump[animationDuration][2]*100)    
     }
 }
 
@@ -94,15 +95,34 @@ function pauseAudio() {
 
     //Show table
 
+function readLocalStorage(i){
+    return  JSON.parse(localStorage.getItem(i));
+}
+function reWriteLocalStoge(){
+    let localArr = [];
+    for(let i = 0; i < localStorage.length-1; i++){
+        localArr[i] = localStorage.getItem(i+1);
+    }
+    localStorage.clear();
+    for(let i = 0; i < localArr.length; i++){
+        localStorage.setItem(i,localArr[i]);
+    }
+}
 
 function showGameOver(){
     tableRows.innerHTML='';
     if(gamerList.length > 10) gamerList.splice(0,1);
     if(gamerTimeList.length > 10) gamerTimeList.splice(0,1);
-    for (let i=gamerList.length; i > 0; i--){
+    if(localStorage.length > 10) {
+        reWriteLocalStoge();
+    }
+    for (let i=localStorage.length; i > 0; i--){
         const tr = document.createElement("tr");
-        tr.innerHTML = "<td>"+ gamerList[i-1] +"</td>" + "<td>"+ gamerTimeList[i-1] +"</td>" ;
+        tr.innerHTML = "<td>"+ readLocalStorage(i-1).gamer +"</td>" + "<td>"+ readLocalStorage(i-1).result +"</td>" ;
         tableRows.appendChild(tr);
+        if(i === localStorage.length){
+           tr.classList.add('tr-now');
+        } 
     }
     gameOver.classList.add('over');
 }
@@ -121,6 +141,14 @@ function convertCurrentTime(time){
     return Math.floor(time/60) + ':'+ sec;
   } 
 
+function writeInLocalStorage(){
+    gamerResult = {
+        gamer: gamerList[gamerList.length-1],
+        result: gamerTimeList[gamerTimeList.length-1],
+    }
+    localStorage.setItem(localStorage.length, JSON.stringify(gamerResult));
+}
+
 let isAlive = setInterval(function(){
     changeTime();
     let dinoBottom = parseInt(window.getComputedStyle(dino).getPropertyValue('bottom'));
@@ -131,12 +159,14 @@ let isAlive = setInterval(function(){
     if(cactusRight > dinoRight && cactusLeft > dinoLeft 
         && dinoBottom <= parseInt(window.getComputedStyle(cactus).getPropertyValue('height'))*0.25){
         gamerTimeList.push(convertCurrentTime(audio.currentTime));
+        writeInLocalStorage();
         pauseAudio();
         stopGame();
     }
     if(audio.currentTime > timeMax){
         pauseAudio();
         gamerTimeList.push(convertCurrentTime(audio.currentTime));
+        writeInLocalStorage();
         audio.currentTime=0;
         stopGame();
         cactus.classList.remove('run');
@@ -157,6 +187,7 @@ playAgain.addEventListener('click',function(){
 level[1].classList.add('level-activ');
 for(let i =0; i< level.length;i++){
     level[i].addEventListener('click',function(){
+        animationDuration = i;
         for(let el of level) el.classList.remove('level-activ');
         cactus.style['animation-duration'] = speedCactus[i];
         dino.style['animation-duration'] = speedJump[i];
@@ -222,8 +253,6 @@ let takeMoney = setInterval(function(){
         money1.classList.remove('run-money1');
     }
 },10);
-
-// For phone
 
 
 
