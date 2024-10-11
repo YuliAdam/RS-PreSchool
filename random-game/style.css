@@ -56,30 +56,30 @@ footer a {
     top: 10px;
     left: 20px;
     z-index: 70;
+    opacity: 0%;
+    transition: all 1s linear;
     display: none;
 }
 .volumeOn:hover,.volumeOff:hover{
-    width: 4vw;
-    height: auto;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    z-index: 70;
     cursor: pointer;
 }
 
 .volumeOff{
-    width: 4vw;
+    width: 3.9vw;
     height: auto;
     position: absolute;
     top: 10px;
-    left: 20px;
+    left: 12px;
     z-index: 70;
+    opacity: 0%;
+    transition: all 1s linear;
     display: none;
 }
 
 .onOffVolume{
     display: block !important;
+    opacity: 100% !important;
+    transition: all 1s linear;
 }
 
 .dino{
@@ -139,6 +139,7 @@ footer a {
     position: absolute;
     bottom: 12vw;
     right: -50%;
+    transition: all 1s linear;
 }
 .money img{
     width: 3vw;
@@ -164,6 +165,7 @@ footer a {
     position: absolute;
     bottom: 12vw;
     right: -25%;
+    transition: all 1s linear;
 }
 .money1 img{
     width: 3vw;
@@ -195,6 +197,7 @@ footer a {
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
     z-index: 50;
+    transition: all 1s linear;
     
 }
 .play input{
@@ -212,6 +215,7 @@ footer a {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     box-shadow: 0px 2px 35px 14px rgba(0, 128, 0, 0.5);
+    transition: all 0.5s linear;
 }
 .play input:focus{
     outline: none;
@@ -224,6 +228,7 @@ footer a {
     height: auto;
     border-radius: 20%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: all 0.5s linear;
 }
 .play-button:hover{
     width: 20vw;
@@ -241,6 +246,7 @@ footer a {
     max-width: 1050px;
     justify-content: space-between;
     margin-top: 40px;
+    transition: all 0.5s linear;
 }
 .level1,.level2,.level3{
     width: 20vw;
@@ -250,6 +256,7 @@ footer a {
     border-radius: 30%;
     border: 3px solid transparent;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: all 0.5s linear;
 }
 .level1:hover,.level2:hover,.level3:hover{
     width: 20vw;
@@ -280,6 +287,7 @@ footer a {
     z-index: 50;
     opacity: 0%;
     display: none;
+    transition: all 0.1s linear;
 }
 .game-over-p{
     width: 40vw;
@@ -297,13 +305,14 @@ footer a {
     max-width: 400px;
     width: 20vw;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.5s linear;
 }
 .play-again:hover{
     min-width: 152px;
     max-width: 400px;
     width: 20vw;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    
+    transition: box-shadow 0.5s linear;
     cursor: pointer;
 }
 .play-again-div{
@@ -311,11 +320,13 @@ footer a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transition: box-shadow 0.5s linear;
 }
 .play-again-div:hover{
     cursor: pointer;
     box-shadow: 0px 2px 35px 14px rgba(13,13,13,0.8);
     border-radius: 35%;
+    transition: box-shadow 0.5s linear;
 }
 
 .over{
@@ -330,7 +341,7 @@ table{
     border-radius: 5%;
     overflow: hidden;
 }
-table, th, td {
+table, th, tr {
     border: 1px solid black;
     border-collapse: collapse;
     font-size: 2vw;
@@ -339,6 +350,14 @@ table, th, td {
     padding: 5px;
     color: white;
 }
+.tr-now{
+    color: rgb(47, 255, 0);
+    background: rgba(0, 0, 0, 0.7);;
+}
+td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 th {
     color: red;
     font-size: 3vw;
@@ -346,6 +365,7 @@ th {
 
 .arrow-up{
     display: none;
+    transition: all 0.5s linear;
 }
 
 @media screen and (max-width: 1280px) {
@@ -356,6 +376,7 @@ th {
         width: 10vw;
         height: auto;
         display: block;
+        transition: all 0.5s linear;
     }
     .arrow-up:hover{
         position: absolute;
