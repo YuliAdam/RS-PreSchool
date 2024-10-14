@@ -19,6 +19,7 @@ footer{
     text-align: center;
     position: fixed;
     bottom: 1vh;
+    z-index: 100;
 }
 #logo{
     width: 5%;
@@ -26,6 +27,7 @@ footer{
 footer a {
     text-decoration: none;
     color: black;
+    z-index: 100;
 }
 
 .game{
