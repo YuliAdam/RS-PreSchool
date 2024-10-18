@@ -34,7 +34,6 @@ function playAudio() {
 function playGame() {
     timeMax = 10;
     if(gamer.value === '') gamer.value = 'Anonim gamer';
-    console.log(gamer.value);
     gamerList.push(gamer.value);
     document.querySelector('.play').style.display = "none";
     cactus.classList.add('run');
@@ -100,7 +99,7 @@ function readLocalStorage(i){
 }
 function reWriteLocalStoge(){
     let localArr = [];
-    for(let i = 0; i < localStorage.length-1; i++){
+    for(let i = 0; i < 10; i++){
         localArr[i] = localStorage.getItem(i+1);
     }
     localStorage.clear();
@@ -159,16 +158,16 @@ let isAlive = setInterval(function(){
     if(cactusRight > dinoRight && cactusLeft > dinoLeft 
         && dinoBottom <= parseInt(window.getComputedStyle(cactus).getPropertyValue('height'))*0.25){
         gamerTimeList.push(convertCurrentTime(audio.currentTime));
+        writeInLocalStorage();
         pauseAudio();
         stopGame();
-        writeInLocalStorage();
     }
     if(audio.currentTime > timeMax){
         pauseAudio();
         gamerTimeList.push(convertCurrentTime(audio.currentTime));
+        writeInLocalStorage();
         audio.currentTime=0;
         stopGame();
-        writeInLocalStorage();
         cactus.classList.remove('run');
         money.classList.remove('run-money');
         money1.classList.remove('run-money1');
