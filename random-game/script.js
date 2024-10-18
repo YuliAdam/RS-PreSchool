@@ -159,16 +159,16 @@ let isAlive = setInterval(function(){
     if(cactusRight > dinoRight && cactusLeft > dinoLeft 
         && dinoBottom <= parseInt(window.getComputedStyle(cactus).getPropertyValue('height'))*0.25){
         gamerTimeList.push(convertCurrentTime(audio.currentTime));
-        writeInLocalStorage();
         pauseAudio();
         stopGame();
+        writeInLocalStorage();
     }
     if(audio.currentTime > timeMax){
         pauseAudio();
         gamerTimeList.push(convertCurrentTime(audio.currentTime));
-        writeInLocalStorage();
         audio.currentTime=0;
         stopGame();
+        writeInLocalStorage();
         cactus.classList.remove('run');
         money.classList.remove('run-money');
         money1.classList.remove('run-money1');
